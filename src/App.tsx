@@ -7,7 +7,7 @@ import { LanguageProvider } from "./contexts/LanguageContext";
 import { Header } from "./components/layout/Header";
 import { Footer } from "./components/layout/Footer";
 import { ScrollToTop } from "./components/ScrollToTop";
-import { AINetworkBackground } from "./components/AINetworkBackground";
+
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Education from "./pages/Education";
@@ -26,7 +26,6 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <AINetworkBackground />
           <div className="flex flex-col min-h-screen">
             <Header />
             <main className="flex-1">

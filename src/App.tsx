@@ -7,7 +7,7 @@ import { LanguageProvider } from "./contexts/LanguageContext";
 import { Header } from "./components/layout/Header";
 import { Footer } from "./components/layout/Footer";
 import { ScrollToTop } from "./components/ScrollToTop";
-
+import { ParticleBackground } from "./components/ParticleBackground";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Education from "./pages/Education";
@@ -26,7 +26,8 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <div className="flex flex-col min-h-screen">
+          <ParticleBackground density={80} interactive={true} />
+          <div className="flex flex-col min-h-screen relative z-10">
             <Header />
             <main className="flex-1">
               <Routes>

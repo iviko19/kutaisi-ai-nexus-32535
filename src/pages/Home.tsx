@@ -76,29 +76,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 px-4 border-y border-border">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="text-center animate-scale-in clean-card p-8 rounded-md"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <stat.icon className="h-10 w-10 mx-auto mb-4 text-primary" />
-                <div className="font-space text-3xl md:text-4xl font-bold text-foreground mb-2">
-                  {stat.value}
-                </div>
-                <div className="font-space text-sm text-muted-foreground">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Services Section */}
       <section className="py-24 px-4">
         <div className="container mx-auto">
@@ -130,6 +107,29 @@ export default function Home() {
                   </Button>
                 </CardContent>
               </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 px-4 border-y border-border">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {stats.map((stat, index) => (
+              <div
+                key={index}
+                className="text-center animate-scale-in clean-card p-8 rounded-md"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <stat.icon className="h-10 w-10 mx-auto mb-4 text-primary" />
+                <div className="font-space text-3xl md:text-4xl font-bold text-foreground mb-2">
+                  {stat.value}
+                </div>
+                <div className="font-space text-sm text-muted-foreground">
+                  {stat.label}
+                </div>
+              </div>
             ))}
           </div>
         </div>

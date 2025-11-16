@@ -38,12 +38,6 @@ All colors MUST be HSL.
 
     --radius: 0.5rem;
     
-    /* Nebula custom colors */
-    --nebula-cyan: 180 100% 50%;
-    --nebula-orange: 19 65% 59%;
-    --nebula-dark: 222 47% 10%;
-    --nebula-darker: 213 46% 19%;
-    
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     
     /* Gradient definitions */

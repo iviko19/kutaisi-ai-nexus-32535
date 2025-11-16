@@ -124,21 +124,10 @@ const translations: Record<Language, Record<string, string>> = {
     'startups.hero.cta': 'წარადგინე შენი იდეა',
 
     // Careers
-    'careers.hero.title': 'კარიერა Nebula Hub-ში',
-    'careers.hero.subtitle': 'ჩვენ გვჯერა, რომ ჩვენი თანამშრომლები ყველაზე ღირებული აქტივია. ჩვენ ვქმნით თანაბარ შესაძლებლობებს, რომლებიც საშუალებას აძლევს სხვადასხვა კულტურისა და ღირებულებების ადამიანებს ჩაერთონ საინტერესო და გამოწვევებით სავსე სამუშაოში.',
-    'careers.section.title': 'კარიერა',
-    'careers.section.description': 'ჩვენ ვსწავლობთ, ვმოქმედებთ და ვვითარდებით ერთად. არასოდეს ვკმაყოფილდებით მიღწეულით და მუდმივად ვცდილობთ გავაუმჯობესოთ ის, რაც დღეს ვართ. ამ საქმეში გვეხმარება მუდმივი სწავლა, ურთიერთდახმარება და მიზნების მიღწევაზე ორიენტირებული გარემო.',
-    'careers.view.positions': 'ნახე ღია პოზიციები',
+    'careers.hero.title': 'შემოუერთდი Nebula გუნდს',
+    'careers.hero.subtitle': 'მუშაობა მომავლის ტექნოლოგიებზე',
     'careers.positions.title': 'ღია ვაკანსიები',
     'careers.internship.title': 'სტაჟირება და Junior პროგრამები',
-    'careers.form.title': 'გააგზავნე რეზიუმე',
-    'careers.form.position': 'დეველოპერი პოზიცია',
-    'careers.form.position.placeholder': 'აირჩიე პოზიცია',
-    'careers.form.portfolio': 'პორტფოლიო/GitHub ლინკი',
-    'careers.form.motivation': 'მოტივაციური წერილი',
-    'careers.form.resume': 'ატვირთე რეზიუმე',
-    'careers.form.submit': 'გაგზავნა',
-    'careers.form.submitting': 'იგზავნება...',
 
     // Contact
     'contact.address': 'მისამართი',
@@ -251,21 +240,10 @@ const translations: Record<Language, Record<string, string>> = {
     'startups.hero.cta': 'Submit Your Idea',
 
     // Careers
-    'careers.hero.title': 'Career at Nebula Hub',
-    'careers.hero.subtitle': 'We believe that our employees are the most important asset. We create equal opportunities that allow people of different cultures and values to engage in work which is interesting and full of challenges.',
-    'careers.section.title': 'Career in',
-    'careers.section.description': 'We learn, act, and develop together. We are never content with what we have achieved and continuously strive to improve on what we are today. In this endeavor, we are aided by continuous learning, mutual support and the environment geared towards the achievement of goals.',
-    'careers.view.positions': 'View Open Jobs',
+    'careers.hero.title': 'Join the Nebula Team',
+    'careers.hero.subtitle': 'Work on future technologies',
     'careers.positions.title': 'Open Positions',
     'careers.internship.title': 'Internship and Junior Programs',
-    'careers.form.title': 'Submit Your Resume',
-    'careers.form.position': 'Developer Position',
-    'careers.form.position.placeholder': 'Select Position',
-    'careers.form.portfolio': 'Portfolio/GitHub Link',
-    'careers.form.motivation': 'Cover Letter',
-    'careers.form.resume': 'Upload Resume',
-    'careers.form.submit': 'Submit',
-    'careers.form.submitting': 'Submitting...',
 
     // Contact
     'contact.address': 'Address',
@@ -378,21 +356,10 @@ const translations: Record<Language, Record<string, string>> = {
     'startups.hero.cta': 'Представить свою идею',
 
     // Careers
-    'careers.hero.title': 'Карьера в Nebula Hub',
-    'careers.hero.subtitle': 'Мы считаем, что наши сотрудники являются самым ценным активом. Мы создаем равные возможности, которые позволяют людям разных культур и ценностей заниматься интересной и полной вызовов работой.',
-    'careers.section.title': 'Карьера в',
-    'careers.section.description': 'Мы учимся, действуем и развиваемся вместе. Мы никогда не довольствуемся достигнутым и постоянно стремимся улучшить то, чем мы являемся сегодня. В этом нам помогает непрерывное обучение, взаимная поддержка и среда, ориентированная на достижение целей.',
-    'careers.view.positions': 'Просмотреть открытые вакансии',
+    'careers.hero.title': 'Присоединяйтесь к команде Nebula',
+    'careers.hero.subtitle': 'Работа над технологиями будущего',
     'careers.positions.title': 'Открытые вакансии',
     'careers.internship.title': 'Стажировка и Junior-программы',
-    'careers.form.title': 'Отправить резюме',
-    'careers.form.position': 'Должность разработчика',
-    'careers.form.position.placeholder': 'Выберите должность',
-    'careers.form.portfolio': 'Портфолио/GitHub ссылка',
-    'careers.form.motivation': 'Мотивационное письмо',
-    'careers.form.resume': 'Загрузить резюме',
-    'careers.form.submit': 'Отправить',
-    'careers.form.submitting': 'Отправка...',
 
     // Contact
     'contact.address': 'Адрес',

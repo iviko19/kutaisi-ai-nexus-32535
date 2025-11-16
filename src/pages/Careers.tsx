@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Briefcase, Target, Globe, Users, BookOpen } from 'lucide-react';
+import { Briefcase, Target, Globe, Users, BookOpen, Upload } from 'lucide-react';
+import nebulaLogo from '@/assets/nebula-logo.svg';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -25,6 +26,7 @@ export default function Careers() {
     position: '',
     portfolio: '',
     motivation: '',
+    resume: null as File | null,
   });
   const [loading, setLoading] = useState(false);
 
@@ -53,12 +55,19 @@ export default function Careers() {
       position: '',
       portfolio: '',
       motivation: '',
+      resume: null,
     });
     setLoading(false);
   };
 
-  const handleChange = (field: string, value: string) => {
+  const handleChange = (field: string, value: string | File) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setFormData((prev) => ({ ...prev, resume: e.target.files![0] }));
+    }
   };
 
   return (
@@ -100,30 +109,30 @@ export default function Careers() {
         </div>
       </section>
 
-      {/* Positions */}
+      {/* Career Section */}
       <section className="py-20 px-4">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-foreground">
-            Open Positions
-          </h2>
-          <div className="max-w-2xl mx-auto mb-12">
-            <Card className="bg-[hsl(var(--nebula-dark))] border-[hsl(var(--nebula-cyan)/0.2)]">
-              <CardContent className="p-12">
-                <p className="text-xl text-muted-foreground mb-6">
-                  No open positions at the moment
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  Please check back later for new opportunities
-                </p>
-              </CardContent>
-            </Card>
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                {t('careers.section.title')}
+              </h2>
+              <img src={nebulaLogo} alt="Nebula Hub" className="h-12" />
+            </div>
+            <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto">
+              {t('careers.hero.subtitle')}
+            </p>
+            <p className="text-base text-muted-foreground mb-8 max-w-3xl mx-auto">
+              {t('careers.section.description')}
+            </p>
+            <Button
+              size="lg"
+              className="bg-[hsl(var(--nebula-orange))] hover:bg-[hsl(var(--nebula-orange)/0.8)] text-white"
+              onClick={() => document.getElementById('application-form')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              {t('careers.view.positions')}
+            </Button>
           </div>
-          <Button
-            size="lg"
-            className="bg-[hsl(var(--nebula-cyan))] hover:bg-[hsl(var(--nebula-cyan)/0.8)] text-[hsl(var(--nebula-dark))]"
-          >
-            View Open Positions
-          </Button>
         </div>
       </section>
 
@@ -159,7 +168,7 @@ export default function Careers() {
           <Card className="bg-[hsl(var(--nebula-dark))] border-[hsl(var(--nebula-cyan)/0.2)]">
             <CardHeader>
               <CardTitle className="text-2xl text-center text-foreground">
-                გააგზავნე რეზიუმე
+                {t('careers.form.title')}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -213,13 +222,13 @@ export default function Careers() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="position">დეველოპერი პოზიცია *</Label>
+                  <Label htmlFor="position">{t('careers.form.position')} *</Label>
                   <Select
                     value={formData.position}
                     onValueChange={(value) => handleChange('position', value)}
                   >
                     <SelectTrigger className="bg-[hsl(var(--nebula-darker))] border-[hsl(var(--nebula-cyan)/0.2)]">
-                      <SelectValue placeholder="აირჩიე პოზიცია" />
+                      <SelectValue placeholder={t('careers.form.position.placeholder')} />
                     </SelectTrigger>
                     <SelectContent className="bg-[hsl(var(--nebula-darker))] border-[hsl(var(--nebula-cyan)/0.2)]">
                       <SelectItem value="ai-ml">AI/ML Engineer</SelectItem>
@@ -233,7 +242,7 @@ export default function Careers() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="portfolio">პორტფოლიო/GitHub ლინკი</Label>
+                  <Label htmlFor="portfolio">{t('careers.form.portfolio')}</Label>
                   <Input
                     id="portfolio"
                     type="url"
@@ -244,7 +253,7 @@ export default function Careers() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="motivation">მოტივაციური წერილი *</Label>
+                  <Label htmlFor="motivation">{t('careers.form.motivation')} *</Label>
                   <Textarea
                     id="motivation"
                     value={formData.motivation}
@@ -255,13 +264,36 @@ export default function Careers() {
                   />
                 </div>
 
+                <div className="space-y-2">
+                  <Label htmlFor="resume">{t('careers.form.resume')} *</Label>
+                  <div className="relative">
+                    <Input
+                      id="resume"
+                      type="file"
+                      accept=".pdf,.doc,.docx"
+                      onChange={handleFileChange}
+                      required
+                      className="hidden"
+                    />
+                    <label
+                      htmlFor="resume"
+                      className="flex items-center justify-center gap-2 p-4 border border-[hsl(var(--nebula-cyan)/0.2)] rounded-md bg-[hsl(var(--nebula-darker))] hover:bg-[hsl(var(--nebula-cyan)/0.1)] cursor-pointer transition-colors"
+                    >
+                      <Upload className="h-5 w-5 text-[hsl(var(--nebula-cyan))]" />
+                      <span className="text-muted-foreground">
+                        {formData.resume ? formData.resume.name : t('careers.form.resume')}
+                      </span>
+                    </label>
+                  </div>
+                </div>
+
                 <Button
                   type="submit"
                   size="lg"
                   disabled={loading}
                   className="w-full bg-[hsl(var(--nebula-cyan))] hover:bg-[hsl(var(--nebula-cyan)/0.8)] text-[hsl(var(--nebula-dark))] glow-cyan"
                 >
-                  {loading ? 'იგზავნება...' : 'გაგზავნა'}
+                  {loading ? t('careers.form.submitting') : t('careers.form.submit')}
                 </Button>
               </form>
             </CardContent>

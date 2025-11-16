@@ -74,6 +74,12 @@ export default {
             900: "hsl(213 46% 19%)",
           },
         },
+        nebula: {
+          cyan: "hsl(var(--nebula-cyan))",
+          orange: "hsl(var(--nebula-orange))",
+          dark: "hsl(var(--nebula-dark))",
+          darker: "hsl(var(--nebula-darker))",
+        },
       },
       backgroundImage: {
         "gradient-cosmic": "var(--gradient-cosmic)",

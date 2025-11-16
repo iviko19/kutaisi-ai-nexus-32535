@@ -36,15 +36,6 @@ export default function Careers() {
     { icon: Briefcase, title: 'უწყვეტი სწავლა' },
   ];
 
-  const positions = [
-    { title: 'AI/ML Engineer', type: 'სრული განაკვეთი', location: 'ქუთაისი' },
-    { title: 'Data Scientist', type: 'სრული განაკვეთი', location: 'ქუთაისი' },
-    { title: 'NLP Specialist', type: 'სრული განაკვეთი', location: 'ქუთაისი' },
-    { title: 'Frontend Developer', type: 'სრული განაკვეთი', location: 'ქუთაისი' },
-    { title: 'Business Development Manager', type: 'სრული განაკვეთი', location: 'ქუთაისი' },
-    { title: 'AI Trainer/Educator', type: 'ნახევარი განაკვეთი', location: 'ქუთაისი' },
-  ];
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
@@ -111,38 +102,28 @@ export default function Careers() {
 
       {/* Positions */}
       <section className="py-20 px-4">
-        <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-foreground">
-            {t('careers.positions.title')}
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-foreground">
+            Open Positions
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {positions.map((position, index) => (
-              <Card
-                key={index}
-                className="bg-[hsl(var(--nebula-dark))] border-[hsl(var(--nebula-cyan)/0.2)] hover:border-[hsl(var(--nebula-cyan))] transition-all animate-scale-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <CardHeader>
-                  <CardTitle className="text-lg text-foreground">{position.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground mb-1">
-                    📍 {position.location}
-                  </p>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    ⏰ {position.type}
-                  </p>
-                  <Button
-                    variant="outline"
-                    className="w-full border-[hsl(var(--nebula-cyan))] text-[hsl(var(--nebula-cyan))] hover:bg-[hsl(var(--nebula-cyan)/0.1)]"
-                    onClick={() => document.getElementById('application-form')?.scrollIntoView({ behavior: 'smooth' })}
-                  >
-                    Apply
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="max-w-2xl mx-auto mb-12">
+            <Card className="bg-[hsl(var(--nebula-dark))] border-[hsl(var(--nebula-cyan)/0.2)]">
+              <CardContent className="p-12">
+                <p className="text-xl text-muted-foreground mb-6">
+                  No open positions at the moment
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  Please check back later for new opportunities
+                </p>
+              </CardContent>
+            </Card>
           </div>
+          <Button
+            size="lg"
+            className="bg-[hsl(var(--nebula-cyan))] hover:bg-[hsl(var(--nebula-cyan)/0.8)] text-[hsl(var(--nebula-dark))]"
+          >
+            View Open Positions
+          </Button>
         </div>
       </section>
 
@@ -183,7 +164,7 @@ export default function Careers() {
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="name">{t('form.name')} *</Label>
                     <Input
@@ -191,7 +172,7 @@ export default function Careers() {
                       value={formData.name}
                       onChange={(e) => handleChange('name', e.target.value)}
                       required
-                      className="bg-[hsl(var(--nebula-darker))] border-[hsl(var(--nebula-cyan)/0.3)]"
+                      className="bg-[hsl(var(--nebula-darker))] border-[hsl(var(--nebula-cyan)/0.2)]"
                     />
                   </div>
                   <div className="space-y-2">
@@ -201,12 +182,12 @@ export default function Careers() {
                       value={formData.lastname}
                       onChange={(e) => handleChange('lastname', e.target.value)}
                       required
-                      className="bg-[hsl(var(--nebula-darker))] border-[hsl(var(--nebula-cyan)/0.3)]"
+                      className="bg-[hsl(var(--nebula-darker))] border-[hsl(var(--nebula-cyan)/0.2)]"
                     />
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="email">{t('form.email')} *</Label>
                     <Input
@@ -215,7 +196,7 @@ export default function Careers() {
                       value={formData.email}
                       onChange={(e) => handleChange('email', e.target.value)}
                       required
-                      className="bg-[hsl(var(--nebula-darker))] border-[hsl(var(--nebula-cyan)/0.3)]"
+                      className="bg-[hsl(var(--nebula-darker))] border-[hsl(var(--nebula-cyan)/0.2)]"
                     />
                   </div>
                   <div className="space-y-2">
@@ -226,56 +207,61 @@ export default function Careers() {
                       value={formData.phone}
                       onChange={(e) => handleChange('phone', e.target.value)}
                       required
-                      className="bg-[hsl(var(--nebula-darker))] border-[hsl(var(--nebula-cyan)/0.3)]"
+                      className="bg-[hsl(var(--nebula-darker))] border-[hsl(var(--nebula-cyan)/0.2)]"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="position">პოზიცია *</Label>
-                  <Select value={formData.position} onValueChange={(value) => handleChange('position', value)}>
-                    <SelectTrigger className="bg-[hsl(var(--nebula-darker))] border-[hsl(var(--nebula-cyan)/0.3)]">
+                  <Label htmlFor="position">დეველოპერი პოზიცია *</Label>
+                  <Select
+                    value={formData.position}
+                    onValueChange={(value) => handleChange('position', value)}
+                  >
+                    <SelectTrigger className="bg-[hsl(var(--nebula-darker))] border-[hsl(var(--nebula-cyan)/0.2)]">
                       <SelectValue placeholder="აირჩიე პოზიცია" />
                     </SelectTrigger>
-                    <SelectContent className="bg-[hsl(var(--nebula-dark))] border-[hsl(var(--nebula-cyan)/0.3)]">
-                      {positions.map((pos) => (
-                        <SelectItem key={pos.title} value={pos.title}>
-                          {pos.title}
-                        </SelectItem>
-                      ))}
+                    <SelectContent className="bg-[hsl(var(--nebula-darker))] border-[hsl(var(--nebula-cyan)/0.2)]">
+                      <SelectItem value="ai-ml">AI/ML Engineer</SelectItem>
+                      <SelectItem value="data-scientist">Data Scientist</SelectItem>
+                      <SelectItem value="nlp">NLP Specialist</SelectItem>
+                      <SelectItem value="frontend">Frontend Developer</SelectItem>
+                      <SelectItem value="business">Business Development Manager</SelectItem>
+                      <SelectItem value="trainer">AI Trainer/Educator</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="portfolio">Portfolio/GitHub</Label>
+                  <Label htmlFor="portfolio">პორტფოლიო/GitHub ლინკი</Label>
                   <Input
                     id="portfolio"
                     type="url"
                     value={formData.portfolio}
                     onChange={(e) => handleChange('portfolio', e.target.value)}
-                    placeholder="https://"
-                    className="bg-[hsl(var(--nebula-darker))] border-[hsl(var(--nebula-cyan)/0.3)]"
+                    className="bg-[hsl(var(--nebula-darker))] border-[hsl(var(--nebula-cyan)/0.2)]"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="motivation">სამოტივაციო წერილი</Label>
+                  <Label htmlFor="motivation">მოტივაციური წერილი *</Label>
                   <Textarea
                     id="motivation"
                     value={formData.motivation}
                     onChange={(e) => handleChange('motivation', e.target.value)}
-                    className="bg-[hsl(var(--nebula-darker))] border-[hsl(var(--nebula-cyan)/0.3)] min-h-32"
+                    rows={5}
+                    required
+                    className="bg-[hsl(var(--nebula-darker))] border-[hsl(var(--nebula-cyan)/0.2)]"
                   />
                 </div>
 
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full bg-[hsl(var(--nebula-cyan))] hover:bg-[hsl(var(--nebula-cyan)/0.8)] text-[hsl(var(--nebula-dark))]"
                   disabled={loading}
+                  className="w-full bg-[hsl(var(--nebula-cyan))] hover:bg-[hsl(var(--nebula-cyan)/0.8)] text-[hsl(var(--nebula-dark))] glow-cyan"
                 >
-                  {loading ? 'იგზავნება...' : t('form.submit')}
+                  {loading ? 'იგზავნება...' : 'გაგზავნა'}
                 </Button>
               </form>
             </CardContent>

@@ -19,13 +19,6 @@ export default function Contact() {
       {/* Main Content */}
       <section className="pb-20 px-4">
         <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-12">
-            <img
-              src="/src/assets/nebula-logo.svg"
-              alt="Nebula Hub Logo"
-              className="h-24 mx-auto mb-8"
-            />
-          </div>
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Contact Info Cards */}

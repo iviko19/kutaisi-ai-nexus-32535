@@ -129,7 +129,7 @@ export default function Business() {
           </p>
           <Button
             size="lg"
-            className="bg-[hsl(var(--nebula-orange))] hover:bg-[hsl(var(--nebula-orange)/0.8)] text-white text-lg px-8 glow-accent"
+            className="bg-secondary hover:bg-secondary/90 text-secondary-foreground text-lg px-8 shadow-glow-accent"
             onClick={() => document.getElementById('consultation-form')?.scrollIntoView({ behavior: 'smooth' })}
           >
             {t('business.hero.cta')}

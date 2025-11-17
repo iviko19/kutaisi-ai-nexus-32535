@@ -93,7 +93,7 @@ export default function Education() {
           </p>
           <Button
             size="lg"
-            className="bg-[hsl(var(--nebula-cyan))] hover:bg-[hsl(var(--nebula-cyan)/0.8)] text-[hsl(var(--nebula-dark))] text-lg px-8 glow-cyan"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 shadow-glow"
             onClick={() => document.getElementById('application-form')?.scrollIntoView({ behavior: 'smooth' })}
           >
             {t('education.hero.cta')}

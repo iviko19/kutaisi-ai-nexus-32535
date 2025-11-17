@@ -14,6 +14,7 @@ import Education from "./pages/Education";
 import Business from "./pages/Business";
 import Startups from "./pages/Startups";
 import Careers from "./pages/Careers";
+import OpenJobs from "./pages/OpenJobs";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -37,6 +38,7 @@ const App = () => (
                 <Route path="/business" element={<Business />} />
                 <Route path="/startups" element={<Startups />} />
                 <Route path="/careers" element={<Careers />} />
+                <Route path="/open-jobs" element={<OpenJobs />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>

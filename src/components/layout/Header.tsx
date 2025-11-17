@@ -17,6 +17,7 @@ export const Header = () => {
     { path: '/education', label: t('nav.education') },
     { path: '/business', label: t('nav.business') },
     { path: '/startups', label: t('nav.startups') },
+    { path: '/solutions', label: t('nav.solutions') },
     { path: '/careers', label: t('nav.careers') },
     { path: '/contact', label: t('nav.contact') },
   ];

@@ -97,9 +97,9 @@ export const Footer = () => {
             <a href="#" className="text-sm text-muted-foreground hover:text-[hsl(var(--nebula-cyan))] transition-colors">
               {t('footer.privacy')}
             </a>
-            <a href="#" className="text-sm text-muted-foreground hover:text-[hsl(var(--nebula-cyan))] transition-colors">
+            {/* <a href="#" className="text-sm text-muted-foreground hover:text-[hsl(var(--nebula-cyan))] transition-colors">
               {t('footer.terms')}
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

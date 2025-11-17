@@ -189,3 +189,24 @@ All colors MUST be HSL.
     box-shadow: 0 12px 40px hsl(19 65% 59% / 0.2);
   }
 }
+/* i added code from here on*/
+
+
+.gradient-title {
+  @apply bg-gradient-to-r from-primary via-accent to-primary 
+         bg-clip-text text-transparent;
+}
+
+
+.cosmic-card {
+  background-color: hsl(215 45% 22%) !important; /* Lightest steel-blue */
+  border: 1px solid hsl(215 55% 30% / 0.4);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.cosmic-card:hover {
+  transform: scale(1.03);
+  border-color: hsl(215 70% 65%);
+}

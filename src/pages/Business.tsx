@@ -121,15 +121,17 @@ export default function Business() {
       {/* Hero */}
       <section className="py-20 px-4">
         <div className="container mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gradient animate-fade-in-up">
-            {t('business.hero.title')}
-          </h1>
+          
+          <h1 className="gradient-title font-orbitron text-4xl md:text-6xl font-bold mb-6 animate-fade-in-up">
+  {t('business.hero.title')}
+</h1>
+
           <p className="text-xl text-muted-foreground mb-8 animate-fade-in">
             20-30% {t('business.hero.stats').split('|')[0]} | 40% {t('business.hero.stats').split('|')[1]}
           </p>
           <Button
             size="lg"
-            className="bg-secondary hover:bg-secondary/90 text-secondary-foreground text-lg px-8 shadow-glow-accent"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 shadow-glow"
             onClick={() => document.getElementById('consultation-form')?.scrollIntoView({ behavior: 'smooth' })}
           >
             {t('business.hero.cta')}
@@ -138,7 +140,7 @@ export default function Business() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 px-4 bg-[hsl(var(--nebula-dark))]">
+      {/* <section className="py-20 px-4 bg-[hsl(var(--nebula-dark))]">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
@@ -167,7 +169,43 @@ export default function Business() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+
+{/* Services Grid */}
+<section className="py-20 px-4 bg-[hsl(var(--nebula-dark))]">
+  <div className="container mx-auto">
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {services.map((service, index) => (
+        <Card
+          key={index}
+          className="cosmic-card hover:scale-105 transition-transform duration-300 animate-fade-in"
+          style={{ animationDelay: `${index * 0.1}s` }}
+        >
+          <CardHeader>
+            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
+              <service.icon className="h-6 w-6 text-primary" />
+            </div>
+            <CardTitle className="text-lg text-foreground">{service.title}</CardTitle>
+          </CardHeader>
+
+          <CardContent>
+            <ul className="space-y-2">
+              {service.features.map((feature, idx) => (
+                <li
+                  key={idx}
+                  className="text-sm text-muted-foreground flex items-start"
+                >
+                  <span className="text-primary mr-2">•</span>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Consultation Form */}
       <section id="consultation-form" className="py-20 px-4 bg-[hsl(var(--nebula-dark))]">

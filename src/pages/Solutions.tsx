@@ -69,7 +69,7 @@ const Solutions = () => {
       </section>
 
       {/* Products Grid */}
-      <section className="py-16 md:py-24">
+      {/* <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto space-y-8">
             {products.map((product, index) => {
@@ -102,7 +102,7 @@ const Solutions = () => {
                     </div>
                   </CardHeader>
 
-                  <CardContent className="relative z-10 space-y-6">
+                   <CardContent className="relative z-10 space-y-6">
                     <CardDescription className="text-base leading-relaxed">
                       {product.description}
                     </CardDescription>
@@ -123,45 +123,89 @@ const Solutions = () => {
                         </span>
                       )}
                     </Button>
-                  </CardContent>
+                  </CardContent> 
+                 
                 </Card>
               );
             })}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* Career CTA Section */}
-      <section className="py-20 md:py-32">
-        <div className="container mx-auto px-4">
-          <Card className="max-w-4xl mx-auto text-center overflow-hidden border-primary/30 shadow-glow-accent">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-transparent" />
-            <CardContent className="relative z-10 py-16 px-6 space-y-8">
-              <div className="flex items-center justify-center gap-3 mb-6">
-                <span className="text-2xl md:text-3xl font-orbitron font-bold">Career in</span>
-                <img src={nebulaLogo} alt="Nebula" className="h-10 md:h-12 w-auto" />
+      {/* Products Grid */}
+<section className="py-16 md:py-24">
+  <div className="container mx-auto px-4">
+    <div className="max-w-5xl mx-auto space-y-8">
+      {products.map((product, index) => {
+        const Icon = product.icon;
+        return (
+          <Card
+            key={index}
+            className="cosmic-card group relative overflow-hidden transition-all duration-500 hover:scale-[1.02] animate-fade-in"
+            style={{ animationDelay: `${index * 120}ms` }}
+          >
+            {/* Gradient hover overlay */}
+            <div
+              className={`absolute inset-0 bg-gradient-to-br ${product.gradient} opacity-0 group-hover:opacity-80 transition-opacity duration-500`}
+            />
+
+            <CardHeader className="relative z-10">
+              <div className="flex items-start justify-between gap-4">
+                <div className="flex items-center gap-4">
+                  {/* Icon bubble */}
+                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <Icon className="w-7 h-7 text-primary" />
+                  </div>
+
+                  <div>
+                    <CardTitle className="text-2xl font-orbitron text-foreground group-hover:text-primary transition-colors">
+                      {product.title}
+                    </CardTitle>
+
+                    {!product.available && (
+                      <Badge variant="secondary" className="mt-2">
+                        {t('solutions.comingsoon')}
+                      </Badge>
+                    )}
+                  </div>
+                </div>
               </div>
-              
-              <div className="space-y-4 text-muted-foreground max-w-2xl mx-auto">
-                <p className="text-base md:text-lg leading-relaxed">
-                  We believe that our employees are the most important asset. We create equal opportunities that allow people of different cultures and values to engage in work which is interesting and full of challenges.
-                </p>
-                <p className="text-base md:text-lg leading-relaxed">
-                  We learn, act, and develop together. We are never content with what we have achieved and continuously strive to improve on what we are today. In this endeavor, we are aided by continuous learning, mutual support and the environment geared towards the achievement of goals.
-                </p>
-              </div>
+            </CardHeader>
+
+            <CardContent className="relative z-10 space-y-6">
+              <CardDescription className="text-base leading-relaxed text-muted-foreground">
+                {product.description}
+              </CardDescription>
 
               <Button
-                asChild
-                size="lg"
-                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white shadow-lg hover:shadow-xl transition-all"
+                asChild={product.available}
+                disabled={!product.available}
+                className="group/btn cosmic-button w-fit"
               >
-                <a href="/open-jobs">View Open Jobs</a>
+                {product.available ? (
+                  <a
+                    href={product.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2"
+                  >
+                    {t('solutions.explore')}
+                    <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                  </a>
+                ) : (
+                  <span className="inline-flex items-center gap-2">
+                    {t('solutions.comingsoon')}
+                  </span>
+                )}
               </Button>
             </CardContent>
           </Card>
-        </div>
-      </section>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
     </div>
   );
 };

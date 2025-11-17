@@ -70,7 +70,14 @@ const translations: Record<Language, Record<string, string>> = {
     
     'solutions.talentbridge.title': 'TalentBridge',
     'solutions.talentbridge.desc': 'დაუკავშირეთ განსაკუთრებული ტალანტები პროგრესული კომპანიებისთვის. TalentBridge არის AI-ით გაძლიერებული რეკრუტინგის პლატფორმა, რომელიც აკავშირებს კვალიფიციურ პროფესიონალებს შესაძლებლობების ძიებაში და კომპანიებს, რომლებიც ეძებენ სრულყოფილ მატჩს. ჩვენი ინტელექტუალური მეჩინგ სისტემა ამარტივებს დაქირავებას და აძლიერებს სამუშაოს მაძიებლებს.',
-    
+
+   'careers.title': 'კარიერა Nebula-ში',
+'careers.desc1': 'ჩვენ გვჯერა, რომ ჩვენი თანამშრომლები ყველაზე მნიშვნელოვანი რესურსია. ჩვენ ვქმნით თანაბარ შესაძლებლობებს, რომლებიც სხვადასხვა კულტურის და ღირებულებების მქონე ადამიანებს აძლევს საშუალებას ჩაერთონ საინტერესო და გამოწვევებით სავსე სამუშაოში.',
+'careers.desc2': 'ჩვენ ერთად ვსწავლობთ, ვმოქმედებთ და ვითარდებით. არასდროს ვართ კმაყოფილი უკვე მიღწეულით და მუდმივად ვცდილობთ გავაუმჯობესოთ ჩვენი თავი. ამაში გვეხმარება უწყვეტი სწავლა, ურთიერთდახმარება და მიზნების მიღწევის oriented გარემო.',
+'careers.button': 'იხილეთ ღია ვაკანსიები',
+
+
+
     'solutions.explore': 'გაეცანი პროდუქტს',
     'solutions.comingsoon': 'მალე',
 
@@ -151,7 +158,8 @@ const translations: Record<Language, Record<string, string>> = {
     'careers.hero.subtitle': 'მუშაობა მომავლის ტექნოლოგიებზე',
     'careers.positions.title': 'ღია ვაკანსიები',
     'careers.internship.title': 'სტაჟირება და Junior პროგრამები',
-
+    'careers.hero.desc1': 'ჩვენ გვჯერა, რომ ჩვენი თანამშრომლები ყველაზე მნიშვნელოვანი რესურსია. ჩვენ ვქმნით თანაბარ შესაძლებლობებს, რომლებიც სხვადასხვა კულტურის და ღირებულებების მქონე ადამიანებს აძლევს საშუალებას ჩაერთონ საინტერესო და გამოწვევებით სავსე სამუშაოში.',
+'careers.hero.desc2': 'ჩვენ ერთად ვსწავლობთ, ვმოქმედებთ და ვითარდებით. არასდროს ვართ კმაყოფილი უკვე მიღწეულით და მუდმივად ვცდილობთ გავაუმჯობესოთ ჩვენი თავი. ამაში გვეხმარება უწყვეტი სწავლა, ურთიერთდახმარება და მიზნების მიღწევის oriented გარემო.',
     // Contact
     'contact.address': 'მისამართი',
     'contact.phone': 'ტელეფონი',
@@ -210,6 +218,13 @@ const translations: Record<Language, Record<string, string>> = {
     'solutions.talentbridge.title': 'TalentBridge',
     'solutions.talentbridge.desc': 'Connecting exceptional talent with forward-thinking companies. TalentBridge is an AI-powered recruitment platform that bridges the gap between skilled professionals seeking opportunities and companies searching for the perfect match. Our intelligent matching system streamlines hiring while empowering job seekers to connect with their ideal roles.',
     
+    'careers.title': 'Career in',
+    'careers.desc1': 'We believe that our employees are the most important asset. We create equal opportunities that allow people of different cultures and values to engage in work which is interesting and full of challenges.',
+    'careers.desc2': 'We learn, act, and develop together. We are never content with what we have achieved and continuously strive to improve on what we are today. In this endeavor, we are aided by continuous learning, mutual support, and an environment geared toward the achievement of goals.',
+    'careers.button': 'View Open Jobs',
+
+
+
     'solutions.explore': 'Explore Product',
     'solutions.comingsoon': 'Coming Soon',
 
@@ -290,6 +305,8 @@ const translations: Record<Language, Record<string, string>> = {
     'careers.hero.subtitle': 'Work on future technologies',
     'careers.positions.title': 'Open Positions',
     'careers.internship.title': 'Internship and Junior Programs',
+'careers.hero.desc1': 'We believe that our employees are the most important asset. We create equal opportunities that allow people of different cultures and values to engage in work which is interesting and full of challenges.',
+'careers.hero.desc2': 'We learn, act, and develop together. We are never content with what we have achieved and continuously strive to improve on what we are today. In this endeavor, we are aided by continuous learning, mutual support, and an environment geared toward the achievement of goals.',
 
     // Contact
     'contact.address': 'Address',

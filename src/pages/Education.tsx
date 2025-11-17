@@ -85,9 +85,13 @@ export default function Education() {
       {/* Hero */}
       <section className="py-20 px-4">
         <div className="container mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gradient animate-fade-in-up">
+          {/* <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gradient animate-fade-in-up">
             {t('education.hero.title')}
-          </h1>
+          </h1> */}
+          <h1 className="gradient-title font-orbitron text-4xl md:text-6xl font-bold mb-6 animate-fade-in-up">
+  {t('education.hero.title')}
+</h1>
+
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 animate-fade-in">
             {t('education.hero.subtitle')}
           </p>
@@ -132,132 +136,177 @@ export default function Education() {
           </div>
         </div>
       </section>
+      
+       {/* Application Form */}
+<section id="application-form" className="py-20 px-4">
+  <div className="container mx-auto max-w-3xl">
 
-      {/* Application Form */}
-      <section id="application-form" className="py-20 px-4">
-        <div className="container mx-auto max-w-3xl">
-          <Card className="bg-[hsl(var(--nebula-dark))] border-[hsl(var(--nebula-cyan)/0.2)]">
-            <CardHeader>
-              <CardTitle className="text-2xl text-center text-foreground">
-                {t('education.form.title')}
-              </CardTitle>
-              <p className="text-center text-muted-foreground mt-2">
-                გამოგვიგზავნეთ ფორმა და დაგიკავშრდებით კურსის შემდეგ მიღებისთვის
-              </p>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">{t('form.name')} *</Label>
-                    <Input
-                      id="name"
-                      value={formData.name}
-                      onChange={(e) => handleChange('name', e.target.value)}
-                      required
-                      className="bg-[hsl(var(--nebula-darker))] border-[hsl(var(--nebula-cyan)/0.3)]"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="lastname">{t('form.lastname')} *</Label>
-                    <Input
-                      id="lastname"
-                      value={formData.lastname}
-                      onChange={(e) => handleChange('lastname', e.target.value)}
-                      required
-                      className="bg-[hsl(var(--nebula-darker))] border-[hsl(var(--nebula-cyan)/0.3)]"
-                    />
-                  </div>
-                </div>
+    <Card className="bg-[hsl(var(--nebula-darker))] border-[hsl(var(--nebula-cyan)/0.3)] shadow-2xl">
+      <CardHeader className="bg-[hsl(var(--nebula-dark))] border-b border-[hsl(var(--nebula-cyan)/0.2)]">
+        <CardTitle className="text-2xl text-center text-foreground">
+          {t('education.form.title')}
+        </CardTitle>
+        <p className="text-center text-muted-foreground mt-2">
+          გამოგვიგზავნეთ ფორმა და დაგიკავშირდებით კურსის შემდეგ მიღებისთვის
+        </p>
+      </CardHeader>
 
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="email">{t('form.email')} *</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => handleChange('email', e.target.value)}
-                      required
-                      className="bg-[hsl(var(--nebula-darker))] border-[hsl(var(--nebula-cyan)/0.3)]"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="phone">{t('form.phone')} *</Label>
-                    <Input
-                      id="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={(e) => handleChange('phone', e.target.value)}
-                      required
-                      className="bg-[hsl(var(--nebula-darker))] border-[hsl(var(--nebula-cyan)/0.3)]"
-                    />
-                  </div>
-                </div>
+      <CardContent className="pt-8">
+        <form onSubmit={handleSubmit} className="space-y-6">
 
-                <div className="space-y-2">
-                  <Label htmlFor="program">აირჩიე პროგრამა *</Label>
-                  <Select value={formData.program} onValueChange={(value) => handleChange('program', value)}>
-                    <SelectTrigger className="bg-[hsl(var(--nebula-darker))] border-[hsl(var(--nebula-cyan)/0.3)]">
-                      <SelectValue placeholder="აირჩიე პროგრამა" />
-                    </SelectTrigger>
-                    <SelectContent className="bg-[hsl(var(--nebula-dark))] border-[hsl(var(--nebula-cyan)/0.3)]">
-                      <SelectItem value="coursera">Coursera</SelectItem>
-                      <SelectItem value="mastercard">Mastercard</SelectItem>
-                      <SelectItem value="btu">BTU</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
+          {/* Name + Lastname */}
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="space-y-2">
+              <Label htmlFor="name">{t('form.name')} *</Label>
+              <Input
+                id="name"
+                value={formData.name}
+                onChange={(e) => handleChange('name', e.target.value)}
+                required
+                className="bg-[hsl(var(--nebula-dark))] border-[hsl(var(--nebula-cyan)/0.3)] text-foreground
+                           focus:border-[hsl(var(--nebula-cyan))] focus:ring-1 focus:ring-[hsl(var(--nebula-cyan))]"
+              />
+            </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="education">განათლების დონე</Label>
-                  <Select value={formData.education} onValueChange={(value) => handleChange('education', value)}>
-                    <SelectTrigger className="bg-[hsl(var(--nebula-darker))] border-[hsl(var(--nebula-cyan)/0.3)]">
-                      <SelectValue placeholder="აირჩიე განათლების დონე" />
-                    </SelectTrigger>
-                    <SelectContent className="bg-[hsl(var(--nebula-dark))] border-[hsl(var(--nebula-cyan)/0.3)]">
-                      <SelectItem value="basic">საბაზო</SelectItem>
-                      <SelectItem value="bachelor">ბაკალავრი</SelectItem>
-                      <SelectItem value="master">მაგისტრი</SelectItem>
-                      <SelectItem value="phd">დოქტორი</SelectItem>
-                      <SelectItem value="other">სხვა</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
+            <div className="space-y-2">
+              <Label htmlFor="lastname">{t('form.lastname')} *</Label>
+              <Input
+                id="lastname"
+                value={formData.lastname}
+                onChange={(e) => handleChange('lastname', e.target.value)}
+                required
+                className="bg-[hsl(var(--nebula-dark))] border-[hsl(var(--nebula-cyan)/0.3)] text-foreground
+                           focus:border-[hsl(var(--nebula-cyan))] focus:ring-1 focus:ring-[hsl(var(--nebula-cyan))]"
+              />
+            </div>
+          </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="interest">ინტერესის სფერო</Label>
-                  <Textarea
-                    id="interest"
-                    value={formData.interest}
-                    onChange={(e) => handleChange('interest', e.target.value)}
-                    className="bg-[hsl(var(--nebula-darker))] border-[hsl(var(--nebula-cyan)/0.3)] min-h-20"
-                  />
-                </div>
+          {/* Email + Phone */}
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="space-y-2">
+              <Label htmlFor="email">{t('form.email')} *</Label>
+              <Input
+                id="email"
+                type="email"
+                value={formData.email}
+                onChange={(e) => handleChange('email', e.target.value)}
+                required
+                className="bg-[hsl(var(--nebula-dark))] border-[hsl(var(--nebula-cyan)/0.3)] text-foreground
+                           focus:border-[hsl(var(--nebula-cyan))] focus:ring-1 focus:ring-[hsl(var(--nebula-cyan))]"
+              />
+            </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="message">{t('form.message')}</Label>
-                  <Textarea
-                    id="message"
-                    value={formData.message}
-                    onChange={(e) => handleChange('message', e.target.value)}
-                    className="bg-[hsl(var(--nebula-darker))] border-[hsl(var(--nebula-cyan)/0.3)] min-h-32"
-                  />
-                </div>
+            <div className="space-y-2">
+              <Label htmlFor="phone">{t('form.phone')} *</Label>
+              <Input
+                id="phone"
+                type="tel"
+                value={formData.phone}
+                onChange={(e) => handleChange('phone', e.target.value)}
+                required
+                className="bg-[hsl(var(--nebula-dark))] border-[hsl(var(--nebula-cyan)/0.3)] text-foreground
+                           focus:border-[hsl(var(--nebula-cyan))] focus:ring-1 focus:ring-[hsl(var(--nebula-cyan))]"
+              />
+            </div>
+          </div>
 
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="w-full bg-[hsl(var(--nebula-cyan))] hover:bg-[hsl(var(--nebula-cyan)/0.8)] text-[hsl(var(--nebula-dark))]"
-                  disabled={loading}
+          {/* Program Dropdown */}
+          <div className="space-y-2">
+            <Label htmlFor="program">აირჩიე პროგრამა *</Label>
+            <Select value={formData.program} onValueChange={(v) => handleChange('program', v)}>
+              <SelectTrigger className="bg-[hsl(var(--nebula-dark))] border-[hsl(var(--nebula-cyan)/0.3)] text-foreground
+                                        focus:border-[hsl(var(--nebula-cyan))] focus:ring-1 focus:ring-[hsl(var(--nebula-cyan))]">
+                <SelectValue placeholder="აირჩიე პროგრამა" />
+              </SelectTrigger>
+
+              <SelectContent className="bg-[#1a2332] border-[hsl(var(--nebula-cyan)/0.2)] z-50">
+                <SelectItem
+                  value="coursera"
+                  className="bg-[#1a2332] text-white data-[highlighted]:bg-orange-500 data-[highlighted]:text-[hsl(var(--nebula-dark))]"
                 >
-                  {loading ? 'იგზავნება...' : t('form.submit')}
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
+                  Coursera
+                </SelectItem>
+                <SelectItem
+                  value="mastercard"
+                  className="bg-[#1a2332] text-white data-[highlighted]:bg-orange-500 data-[highlighted]:text-[hsl(var(--nebula-dark))]"
+                >
+                  Mastercard
+                </SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+          {/* Education Level */}
+          <div className="space-y-2">
+            <Label htmlFor="education">განათლების დონე</Label>
+            <Select value={formData.education} onValueChange={(v) => handleChange('education', v)}>
+              <SelectTrigger className="bg-[hsl(var(--nebula-dark))] border-[hsl(var(--nebula-cyan)/0.3)] text-foreground
+                                        focus:border-[hsl(var(--nebula-cyan))] focus:ring-1 focus:ring-[hsl(var(--nebula-cyan))]">
+                <SelectValue placeholder="აირჩიე განათლების დონე" />
+              </SelectTrigger>
+
+              <SelectContent className="bg-[#1a2332] border-[hsl(var(--nebula-cyan)/0.2)] z-50">
+                {[
+                  ["basic", "საბაზო"],
+                  ["bachelor", "ბაკალავრი"],
+                  ["master", "მაგისტრი"],
+                  ["phd", "დოქტორი"],
+                  ["other", "სხვა"]
+                ].map(([value, label]) => (
+                  <SelectItem
+                    key={value}
+                    value={value}
+                    className="bg-[#1a2332] text-white data-[highlighted]:bg-orange-500 data-[highlighted]:text-[hsl(var(--nebula-dark))]"
+                  >
+                    {label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
+          {/* Interest */}
+          <div className="space-y-2">
+            <Label htmlFor="interest">ინტერესის სფერო</Label>
+            <Textarea
+              id="interest"
+              value={formData.interest}
+              onChange={(e) => handleChange('interest', e.target.value)}
+              className="bg-[hsl(var(--nebula-dark))] border-[hsl(var(--nebula-cyan)/0.3)] text-foreground
+                         focus:border-[hsl(var(--nebula-cyan))] focus:ring-1 focus:ring-[hsl(var(--nebula-cyan))] min-h-20 resize-none"
+            />
+          </div>
+
+          {/* Message */}
+          <div className="space-y-2">
+            <Label htmlFor="message">{t('form.message')}</Label>
+            <Textarea
+              id="message"
+              value={formData.message}
+              onChange={(e) => handleChange('message', e.target.value)}
+              className="bg-[hsl(var(--nebula-dark))] border-[hsl(var(--nebula-cyan)/0.3)] text-foreground
+                         focus:border-[hsl(var(--nebula-cyan))] focus:ring-1 focus:ring-[hsl(var(--nebula-cyan))] min-h-32 resize-none"
+            />
+          </div>
+
+          {/* Submit Button */}
+          <Button
+            type="submit"
+            size="lg"
+            className="w-full bg-[hsl(var(--nebula-cyan))] hover:bg-[hsl(var(--nebula-cyan)/0.8)] text-[hsl(var(--nebula-dark))]"
+            disabled={loading}
+          >
+            {loading ? 'იგზავნება...' : t('form.submit')}
+          </Button>
+
+        </form>
+      </CardContent>
+    </Card>
+
+  </div>
+</section>
+
+
     </div>
   );
 }

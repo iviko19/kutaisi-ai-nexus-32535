@@ -100,30 +100,34 @@ export default function Careers() {
         </div>
       </section>
 
-      {/* Positions */}
+      {/* Career Section */}
       <section className="py-20 px-4">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-foreground">
-            Open Positions
-          </h2>
-          <div className="max-w-2xl mx-auto mb-12">
-            <Card className="bg-[hsl(var(--nebula-dark))] border-[hsl(var(--nebula-cyan)/0.2)]">
-              <CardContent className="p-12">
-                <p className="text-xl text-muted-foreground mb-6">
-                  No open positions at the moment
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  Please check back later for new opportunities
-                </p>
-              </CardContent>
-            </Card>
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                Career in
+              </h2>
+              <img src="/src/assets/nebula-logo.png" alt="Nebula" className="h-10" />
+            </div>
+            <div className="space-y-6 text-lg text-muted-foreground max-w-3xl mx-auto">
+              <p>
+                We believe that our employees are the most important asset. We create equal opportunities that allow people of different cultures and values to engage in work which is interesting and full of challenges.
+              </p>
+              <p>
+                We learn, act, and develop together. We are never content with what we have achieved and continuously strive to improve on what we are today. In this endeavor, we are aided by continuous learning, mutual support and the environment geared towards the achievement of goals.
+              </p>
+            </div>
           </div>
-          <Button
-            size="lg"
-            className="bg-[hsl(var(--nebula-cyan))] hover:bg-[hsl(var(--nebula-cyan)/0.8)] text-[hsl(var(--nebula-dark))]"
-          >
-            View Open Positions
-          </Button>
+          <div className="text-center">
+            <Button
+              size="lg"
+              className="bg-[hsl(var(--nebula-orange))] hover:bg-[hsl(var(--nebula-orange)/0.8)] text-white text-lg px-8 shadow-glow-accent"
+              onClick={() => window.location.href = '/open-jobs'}
+            >
+              View Open Jobs
+            </Button>
+          </div>
         </div>
       </section>
 

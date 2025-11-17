@@ -48,8 +48,31 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.education': 'განათლება',
     'nav.business': 'ბიზნეს სერვისები',
     'nav.startups': 'სტარტაპები',
+    'nav.solutions': 'ჩვენი გადაწყვეტები',
     'nav.careers': 'კარიერა',
     'nav.contact': 'კონტაქტი',
+    
+    // Solutions
+    'solutions.hero.title': 'ჩვენი გადაწყვეტები',
+    'solutions.hero.subtitle': 'ვამძლიერებთ ბიზნესებს AI-ით მართულ ინოვაციებით იურიდიულ ტექნოლოგიებში, კონტენტის შექმნაში, მედია ინტელექტსა და მის მიღმა',
+    
+    'solutions.legalguard.title': 'LegalGuard AI',
+    'solutions.legalguard.desc': 'LegalGuard AI არის ხელოვნური ინტელექტით მხარდაჭერილი პლატფორმა, რომელიც ამარტივებს დოკუმენტების მართვას კლინიკებისა და ნოტარიუსებისთვის. ჩვენი სისტემა ავტომატურად ავსებს, არედაქტირებს და ამოწმებს თქვენ მიერ მოწოდებულ შაბლონებს — მხოლოდ მარტივი ბრძანების ან საუბრის საშუალებით. ჩვენი სერვისი ამცირებს დროს, ხარვეზებს, და უზრუნველყოფს მონაცემების უსაფრთხო, საიმედო დამუშავებას, სრული კონფიდენციალურობის დაცვით.',
+    
+    'solutions.travelplanner.title': 'TravelPlanner AI',
+    'solutions.travelplanner.desc': 'ხელოვნურ ინტელექტზე დაფუძნებული პლატფორმა პერსონალიზებული მოგზაურობის დასაგეგმად. TravelPlanner გიქმნით მორგებულ მარშრუტებს, გათვლით ხარჯებს და გაძლევთ მარტივ წვდომას დაჯავშნის სერვისებთან. ინტეგრირებული რეალურ დროში განახლებად ფასებთან და დანიშნულების მონაცემებთან, რაც მოგზაურობის დაგეგმვას ინტუიტიურსა და ეფექტურს ხდის.',
+    
+    'solutions.media.title': 'Media Monitoring AI',
+    'solutions.media.desc': 'გაიგეთ თქვენი მედია ლანდშაფტი მყისიერად 24/7 ავტომატური მონიტორინგით. ჩვენი AI აანალიზებს სენტიმენტს, აკონტროლებს ბრენდის ხსენებებს ყველა არხზე და აძლევს რეალურ დროში შეტყობინებებს მოქმედი ინსაითებით. მიიღეთ სრული Share of Voice მეტრიკა, ტრენდების ანალიზი და ავტომატური რეპორტინგი—ერთ ძლიერ პლატფორმაზე.',
+    
+    'solutions.contentai.title': 'ContentAI',
+    'solutions.contentai.desc': 'შექმენით, დაგეგმეთ და გამოაქვეყნეთ კონტენტი 3-ჯერ სწრაფად. ContentAI არის თქვენი AI-ით გაძლიერებული კონტენტ შექმნის პაკეტი მარკეტერებისა და გუნდებისთვის. გენერირება ბრენდის შესაბამისი ვიზუალებისა და ტექსტის, დაგეგმვა მრავალ პლატფორმაზე და შესრულების თვალთვალი—ყველაფერი ბრენდის სრულყოფილი შესაბამისობის შენარჩუნებით.',
+    
+    'solutions.talentbridge.title': 'TalentBridge',
+    'solutions.talentbridge.desc': 'დაუკავშირეთ განსაკუთრებული ტალანტები პროგრესული კომპანიებისთვის. TalentBridge არის AI-ით გაძლიერებული რეკრუტინგის პლატფორმა, რომელიც აკავშირებს კვალიფიციურ პროფესიონალებს შესაძლებლობების ძიებაში და კომპანიებს, რომლებიც ეძებენ სრულყოფილ მატჩს. ჩვენი ინტელექტუალური მეჩინგ სისტემა ამარტივებს დაქირავებას და აძლიერებს სამუშაოს მაძიებლებს.',
+    
+    'solutions.explore': 'გაეცანი პროდუქტს',
+    'solutions.comingsoon': 'მალე',
 
     // Home Hero
     'home.hero.title': 'ხელოვნური ინტელექტის მომავალი იწყება აქ',
@@ -164,8 +187,31 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.education': 'Education',
     'nav.business': 'Business Services',
     'nav.startups': 'Startups',
+    'nav.solutions': 'Our Solutions',
     'nav.careers': 'Careers',
     'nav.contact': 'Contact',
+    
+    // Solutions
+    'solutions.hero.title': 'Our Solutions',
+    'solutions.hero.subtitle': 'Empowering businesses with AI-driven innovation across legal tech, content creation, media intelligence, and beyond',
+    
+    'solutions.legalguard.title': 'LegalGuard AI',
+    'solutions.legalguard.desc': 'AI-powered document automation for legal professionals. LegalGuard streamlines document management for clinics and notaries, automatically filling, editing, and validating templates through simple commands or conversation—reducing errors, saving time, and ensuring secure, confidential data handling.',
+    
+    'solutions.travelplanner.title': 'TravelPlanner AI',
+    'solutions.travelplanner.desc': 'Your AI-powered travel planning assistant. TravelPlanner creates personalized itineraries, calculates costs in advance, and seamlessly connects you with booking services. Integrated with real-time pricing and destination data through partnerships with Kiwi, Booking.com, and more—making travel planning intuitive and efficient.',
+    
+    'solutions.media.title': 'Media Monitoring AI',
+    'solutions.media.desc': 'Understand your media landscape instantly with 24/7 automated monitoring. Our AI analyzes sentiment, tracks brand mentions across all channels, and delivers real-time alerts with actionable insights. Get comprehensive share of voice metrics, trend analysis, and automated reporting—all on one powerful platform.',
+    
+    'solutions.contentai.title': 'ContentAI',
+    'solutions.contentai.desc': 'Create, schedule, and publish content 3x faster. ContentAI is your AI-powered content creation suite for marketers and teams. Generate on-brand visuals and copy, schedule across multiple platforms, and track performance—all while maintaining perfect brand consistency with smart templates and automated workflows.',
+    
+    'solutions.talentbridge.title': 'TalentBridge',
+    'solutions.talentbridge.desc': 'Connecting exceptional talent with forward-thinking companies. TalentBridge is an AI-powered recruitment platform that bridges the gap between skilled professionals seeking opportunities and companies searching for the perfect match. Our intelligent matching system streamlines hiring while empowering job seekers to connect with their ideal roles.',
+    
+    'solutions.explore': 'Explore Product',
+    'solutions.comingsoon': 'Coming Soon',
 
     // Home Hero
     'home.hero.title': 'The Future of AI Starts Here',
@@ -280,8 +326,31 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.education': 'Образование',
     'nav.business': 'Бизнес-услуги',
     'nav.startups': 'Стартапы',
+    'nav.solutions': 'Наши решения',
     'nav.careers': 'Карьера',
     'nav.contact': 'Контакты',
+    
+    // Solutions
+    'solutions.hero.title': 'Наши решения',
+    'solutions.hero.subtitle': 'Расширяем возможности бизнеса с помощью инноваций на базе ИИ в юридических технологиях, создании контента, медиа-аналитике и не только',
+    
+    'solutions.legalguard.title': 'LegalGuard AI',
+    'solutions.legalguard.desc': 'Автоматизация документов на базе ИИ для юристов. LegalGuard упрощает управление документами для клиник и нотариусов, автоматически заполняя, редактируя и проверяя шаблоны с помощью простых команд или разговора—сокращая ошибки, экономя время и обеспечивая безопасную конфиденциальную обработку данных.',
+    
+    'solutions.travelplanner.title': 'TravelPlanner AI',
+    'solutions.travelplanner.desc': 'Ваш ИИ-помощник для планирования путешествий. TravelPlanner создает персонализированные маршруты, рассчитывает расходы заранее и легко связывает вас с сервисами бронирования. Интегрирован с данными о ценах и направлениях в реальном времени через партнерства с Kiwi, Booking.com и другими—делая планирование путешествий интуитивным и эффективным.',
+    
+    'solutions.media.title': 'Media Monitoring AI',
+    'solutions.media.desc': 'Мгновенно понимайте свой медиа-ландшафт с помощью автоматического мониторинга 24/7. Наш ИИ анализирует настроения, отслеживает упоминания бренда по всем каналам и предоставляет оповещения в реальном времени с практическими инсайтами. Получайте полную метрику доли голоса, анализ трендов и автоматическую отчетность—все на одной мощной платформе.',
+    
+    'solutions.contentai.title': 'ContentAI',
+    'solutions.contentai.desc': 'Создавайте, планируйте и публикуйте контент в 3 раза быстрее. ContentAI—это ваш набор для создания контента на базе ИИ для маркетологов и команд. Генерируйте визуальные материалы и текст в стиле бренда, планируйте на нескольких платформах и отслеживайте производительность—все с сохранением идеальной согласованности бренда.',
+    
+    'solutions.talentbridge.title': 'TalentBridge',
+    'solutions.talentbridge.desc': 'Соединяем исключительные таланты с прогрессивными компаниями. TalentBridge—это платформа подбора персонала на базе ИИ, которая связывает квалифицированных специалистов, ищущих возможности, с компаниями, ищущими идеальное совпадение. Наша интеллектуальная система подбора упрощает найм и помогает соискателям найти свою идеальную роль.',
+    
+    'solutions.explore': 'Изучить продукт',
+    'solutions.comingsoon': 'Скоро',
 
     // Home Hero
     'home.hero.title': 'Будущее ИИ начинается здесь',

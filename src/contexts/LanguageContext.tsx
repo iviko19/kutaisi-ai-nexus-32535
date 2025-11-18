@@ -127,6 +127,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.partnerships.title': 'პარტნიორობები',
 
     // Education
+
     'education.hero.title': 'დაიწყე AI კარიერა დღესვე - სრულიად უფასოდ',
     'education.hero.subtitle': 'საერთაშორისო კურსები ქართულენოვანი მხარდაჭერით',
     'education.hero.cta': 'დარეგისტრირდი ახლავე',
@@ -142,33 +143,192 @@ const translations: Record<Language, Record<string, string>> = {
 
     'education.form.title': 'დარეგისტრირდი პროგრამაზე',
     'education.benefits.title': 'რატომ Nebula?',
+'education.mastercard.feature1': 'ჩატბოტების შექმნა',
+'education.mastercard.feature2': 'სურათების ამოცნობა',
+'education.mastercard.feature3': 'რეკომენდაციის ალგორითმები',
+'education.mastercard.feature4': 'პროგნოზირებადი ანალიტიკა',
+'education.form.subtitle': 'გამოგვიგზავნეთ ფორმა და დაგიკავშირდებით კურსის შემდეგ მიღებისთვის',
 
+'form.program': 'აირჩიე პროგრამა',
+'form.programPlaceholder': 'აირჩიე პროგრამა',
+'form.education': 'განათლების დონე',
+'form.educationPlaceholder': 'აირჩიე განათლების დონე',
+'form.basic': 'საბაზო',
+'form.bachelor': 'ბაკალავრი',
+'form.master': 'მაგისტრი',
+'form.phd': 'დოქტორი',
+'form.other': 'სხვა',
+'form.interest': 'ინტერესის სფერო',
+'form.sending': 'იგზავნება...',
     // Business
-    'business.hero.title': 'AI გადაწყვეტები თქვენი ბიზნესისთვის',
-    'business.hero.stats': 'ხარჯების შემცირება | პროდუქტიულობის ზრდა',
-    'business.hero.cta': 'მიიღე უფასო კონსულტაცია',
+    // 'business.hero.title': 'AI გადაწყვეტები თქვენი ბიზნესისთვის',
+    // 'business.hero.stats': 'ხარჯების შემცირება | პროდუქტიულობის ზრდა',
+    // 'business.hero.cta': 'მიიღე უფასო კონსულტაცია',
+    // BUSINESS – KA
+'business.hero.title': 'AI გადაწყვეტილებები თქვენი ბიზნესისთვის',
+'business.hero.stats': 'ხარჯების შემცირება|პროდუქტიულობის ზრდა',
+'business.hero.cta': 'მიიღე უფასო კონსულტაცია',
+
+'business.services.audit.title': 'AI აუდიტი და სტრატეგია',
+'business.services.audit.feature1': 'ბიზნეს პროცესების ანალიზი',
+'business.services.audit.feature2': 'AI მზადყოფნის შეფასება',
+'business.services.audit.feature3': 'მორგებული სტრატეგია',
+'business.services.audit.feature4': 'ROI პროგნოზირება',
+
+'business.services.automation.title': 'ბიზნეს ოპერაციების ავტომატიზაცია',
+'business.services.automation.feature1': 'Power BI, Tableau ინტეგრაცია',
+'business.services.automation.feature2': 'Asana, Jira ავტომატიზაცია',
+'business.services.automation.feature3': 'დოკუმენტების გენერაცია',
+'business.services.automation.feature4': 'მონაცემთა სტრუქტურიზაცია',
+
+'business.services.products.title': 'AI პროდუქტები და SaaS',
+'business.services.products.feature1': 'Custom GPT-ჩატბოტები ქართულ ენაზე',
+'business.services.products.feature2': 'თვითმომსახურების სისტემები',
+'business.services.products.feature3': 'დინამიკური ფასების მოდელები',
+'business.services.products.feature4': 'Text-to-Speech და Speech-to-Text',
+
+'business.services.industry.title': 'ინდუსტრიული გადაწყვეტები',
+'business.services.industry.feature1': 'ენერგეტიკა – პროგნოზირება',
+'business.services.industry.feature2': 'ფინანსები – თაღლითობის გამოვლენა',
+'business.services.industry.feature3': 'ლოჯისტიკა – მარშრუტის ოპტიმიზაცია',
+'business.services.industry.feature4': 'ავიაცია – ფრენის დაგეგმვა',
+
+'business.services.cv.title': 'Computer Vision',
+'business.services.cv.feature1': 'CCTV ინტეგრაცია',
+'business.services.cv.feature2': 'ობიექტების ამოცნობა',
+'business.services.cv.feature3': 'უსაფრთხოების სისტემები',
+'business.services.cv.feature4': 'ხარისხის კონტროლი',
+
+'business.services.data.title': 'მონაცემთა მენეჯმენტი',
+'business.services.data.feature1': 'მონაცემთა ეტიკეტირება',
+'business.services.data.feature2': 'დატასეტების მომზადება',
+'business.services.data.feature3': 'მოდელების fine-tuning',
+'business.services.data.feature4': 'მონაცემთა ანალიზი',
+
+'business.form.title': 'მიიღე უფასო კონსულტაცია',
+'business.form.subtitle': 'შეავსე ფორმა და ჩვენი გუნდი დაგიკავშირდებათ AI გადაწყვეტების შესათანხმებლად',
+'business.form.company': 'კომპანიის სახელი',
+'business.form.contact': 'საკონტაქტო პირი',
+'business.form.industry': 'ინდუსტრია',
+'business.form.industryPlaceholder': 'აირჩიე ინდუსტრია',
+'business.form.description': 'პროექტის აღწერა',
+'business.form.budget': 'დაახლოებითი ბიუჯეტი',
+
+'business.industry.energy': 'ენერგეტიკა',
+'business.industry.finance': 'ფინანსები',
+'business.industry.logistics': 'ლოჯისტიკა',
+'business.industry.aviation': 'ავიაცია',
+'business.industry.retail': 'საცალო ვაჭრობა',
+'business.industry.healthcare': 'ჯანდაცვა',
+'business.industry.education': 'განათლება',
+'business.industry.other': 'სხვა',
+
 
     // Startups
-    'startups.hero.title': 'შენი AI იდეის რეალიზაცია',
-    'startups.hero.subtitle': 'ტექნიკური მხარდაჭერა, დაფინანსება და მენტორობა',
-    'startups.hero.cta': 'წარადგინე შენი იდეა',
+    // 'startups.hero.title': 'შენი AI იდეის რეალიზაცია',
+    // 'startups.hero.subtitle': 'ტექნიკური მხარდაჭერა, დაფინანსება და მენტორობა',
+    // 'startups.hero.cta': 'წარადგინე შენი იდეა',
+    // STARTUPS HERO
+// HERO
+'startups.hero.title': 'AI მხარდაჭერა სტარტაპებისთვის',
+'startups.hero.subtitle': 'განვითარე, დაასქეილე და დააჩქარე შენი სტარტაპი ჩვენი ტექნიკური, ბიზნეს და ინფრასტრუქტურული ეკოსისტემით.',
+'startups.hero.cta': 'განაცხადის შევსება',
+
+// OFFERINGS
+'startups.offerings.title': 'რას გთავაზობთ',
+
+'startups.offerings.tech.title': 'ტექნიკური მხარდაჭერა',
+'startups.offerings.tech.feature1': 'AI პროდუქტის განვითარება',
+'startups.offerings.tech.feature2': 'ტექნოლოგიური კონსულტაციები',
+'startups.offerings.tech.feature3': 'კოდის რევიუ',
+
+'startups.offerings.business.title': 'ბიზნეს მხარდაჭერა',
+'startups.offerings.business.feature1': 'ბიზნესმოდელის განვითარება',
+'startups.offerings.business.feature2': 'ბაზარზე გასვლის სტრატეგია',
+'startups.offerings.business.feature3': 'მომხმარებელთა მართვა',
+
+'startups.offerings.funding.title': 'დაფინანსება',
+'startups.offerings.funding.feature1': 'თანადაფინანსება',
+'startups.offerings.funding.feature2': 'ინვესტორებთან დაკავშირება',
+'startups.offerings.funding.feature3': 'გრანტების მოძიება',
+
+'startups.offerings.infrastructure.title': 'ინფრასტრუქტურა',
+'startups.offerings.infrastructure.feature1': 'Cloud და GPU სერვისები',
+'startups.offerings.infrastructure.feature2': 'სამუშაო სივრცე',
+'startups.offerings.infrastructure.feature3': 'ტექნიკური აღჭურვილობა',
+
+'startups.offerings.network.title': 'ქსელი და მენტორობა',
+'startups.offerings.network.feature1': 'გამოცდილი მენტორები',
+'startups.offerings.network.feature2': 'პარტნიორების ქსელი',
+'startups.offerings.network.feature3': 'ინვესტორული კავშირები',
+
+// PROCESS
+'startups.process.title': 'განაცხადის პროცესი',
+'startups.process.step1.title': 'განაცხადის შევსება',
+'startups.process.step1.desc': 'შეავსე განაცხადი ონლაინ',
+'startups.process.step2.title': 'იდეის წარდგენა',
+'startups.process.step2.desc': 'წარმოადგინე შენი იდეა გუნდთან',
+'startups.process.step3.title': 'შეფასება',
+'startups.process.step3.desc': 'ექსპერტების მიერ შეფასება',
+'startups.process.step4.title': 'მიღება',
+'startups.process.step4.desc': 'დაიწყე მუშაობა Nebula-სთან',
+
+// FORM
+'startups.form.title': 'წარადგინე შენი სტარტაპი',
+'startups.form.subtitle': 'მოგვიყევი მეტი თქვენს იდეაზე, რათა შევაფასოთ განაცხადი.',
+'startups.form.startupName': 'სტარტაპის სახელი',
+'startups.form.description': 'მოკლე აღწერა',
+'startups.form.stage': 'განვითარების ეტაპი',
+'startups.form.stagePlaceholder': 'აირჩიე ეტაპი',
+'startups.form.team': 'გუნდის შემადგენლობა',
+
+// STAGES
+'startups.stages.idea': 'იდეა',
+'startups.stages.mvp': 'MVP',
+'startups.stages.beta': 'Beta',
+'startups.stages.ready': 'Launch Ready',
+
 
     // Careers
-    'careers.hero.title': 'შემოუერთდი Nebula გუნდს',
-    'careers.hero.subtitle': 'მუშაობა მომავლის ტექნოლოგიებზე',
-    'careers.positions.title': 'ღია ვაკანსიები',
-    'careers.internship.title': 'სტაჟირება და Junior პროგრამები',
-    'careers.hero.desc1': 'ჩვენ გვჯერა, რომ ჩვენი თანამშრომლები ყველაზე მნიშვნელოვანი რესურსია. ჩვენ ვქმნით თანაბარ შესაძლებლობებს, რომლებიც სხვადასხვა კულტურის და ღირებულებების მქონე ადამიანებს აძლევს საშუალებას ჩაერთონ საინტერესო და გამოწვევებით სავსე სამუშაოში.',
-'careers.hero.desc2': 'ჩვენ ერთად ვსწავლობთ, ვმოქმედებთ და ვითარდებით. არასდროს ვართ კმაყოფილი უკვე მიღწეულით და მუდმივად ვცდილობთ გავაუმჯობესოთ ჩვენი თავი. ამაში გვეხმარება უწყვეტი სწავლა, ურთიერთდახმარება და მიზნების მიღწევის oriented გარემო.',
-    // Contact
-    'contact.address': 'მისამართი',
-    'contact.phone': 'ტელეფონი',
-    'contact.email': 'ელფოსტა',
-    'contact.hours': 'სამუშაო საათები',
-    'contact.hours.weekdays': 'ორშაბათი - პარასკევი: 10:00 - 18:00',
-    'contact.hours.weekend': 'შაბათი-კვირა: დახურულია',
-    'contact.form.title': 'გამოგვიგზავნე შეტყობინება',
+  // CAREERS PAGE TRANSLATIONS (KA)
+'careers.hero.title': 'შემოუერთდი Nebula გუნდს',
+'careers.hero.subtitle': 'მუშაობა მომავლის ტექნოლოგიებზე',
+
+'careers.title': 'კარიერა Nebula-ში',
+'careers.desc1': 'ჩვენ გვჯერა, რომ ჩვენი თანამშრომლები ყველაზე მნიშვნელოვანი რესურსია. ჩვენ ვქმნით თანაბარ შესაძლებლობებს სხვადასხვა კულტურის ადამიანებისთვის.',
+'careers.desc2': 'ჩვენ ერთად ვსწავლობთ, ვმოქმედებთ და ვითარდებით — მუდმივად ვცდილობთ გავაუმჯობესოთ ჩვენი თავი უწყვეტი სწავლითა და მხარდაჭერით.',
+
+'careers.benefit.real_projects': 'რეალური AI პროექტები',
+'careers.benefit.development': 'პროფესიული განვითარება',
+'careers.benefit.partners': 'საერთაშორისო პარტნიორები',
+'careers.benefit.team': 'ახალგაზრდა გუნდი',
+'careers.benefit.learning': 'უწყვეტი სწავლა',
+
+'careers.internship.title': 'სტაჟირება და Junior პროგრამები',
+'careers.internship.subtitle': 'ჩვენი საუკეთესო კურსდამთავრებულები დღეს Nebula AI Hub-ში მუშაობენ.',
+'careers.internship.program': 'სტაჟირების პროგრამა',
+'careers.internship.junior': 'Junior პოზიციები',
+'careers.internship.mentorship': 'მენტორობა',
+
+'careers.form.title': 'გააგზავნე რეზიუმე',
+'careers.form.position': 'დეველოპერი პოზიცია',
+'careers.form.positionPlaceholder': 'აირჩიე პოზიცია',
+'careers.form.portfolio': 'პორტფოლიო / GitHub ლინკი',
+'careers.form.motivation': 'მოტივაციური წერილი',
+'careers.form.resume': 'რეზიუმე (PDF)',
+'careers.form.sending': 'იგზავნება...',
+'careers.form.submit': 'გაგზავნა',
+
+  // Contact
     
+  'contact.email': 'ელფოსტა',
+'contact.phone': 'ტელეფონი',
+'contact.address': 'მისამართი',
+'contact.address.full': 'ქუთაისი, წმინდა ნინოს N4',
+'contact.social': 'სოციალური ქსელები',
+
+
+
     // Form Fields
     'form.name': 'სახელი',
     'form.lastname': 'გვარი',
@@ -179,14 +339,23 @@ const translations: Record<Language, Record<string, string>> = {
     'form.success': 'წარმატებით გაიგზავნა!',
     'form.required': 'ველი სავალდებულოა',
 
+"footer.services_list.ai_academy": "AI აკადემია",
+"footer.services_list.chatbots": "ჩატბოტები",
+"footer.services_list.ai_solutions": "AI გადაწყვეტილებები",
+"footer.services_list.industry_solutions": "ინდუსტრიული გადაწყვეტები",
+"footer.services_list.computer_vision": "Computer Vision",
+"footer.services_list.data_analytics": "მონაცემთა ანალიტიკა",
+
+
+
     // Footer
-    'footer.description': 'პლატფორმა AI განათლებისა და ინოვაციისთვის',
-    'footer.quicklinks': 'სწრაფი ბმულები',
-    'footer.services': 'სერვისები',
-    'footer.partners': 'პარტნიორები',
-    'footer.rights': 'ყველა უფლება დაცულია',
-    'footer.privacy': 'Privacy Policy',
-    'footer.terms': 'Terms of Service',
+    // 'footer.description': 'პლატფორმა AI განათლებისა და ინოვაციისთვის',
+    // 'footer.quicklinks': 'სწრაფი ბმულები',
+    // 'footer.services': 'სერვისები',
+    // 'footer.partners': 'პარტნიორები',
+    // 'footer.rights': 'ყველა უფლება დაცულია',
+    // 'footer.privacy': 'Privacy Policy',
+    // 'footer.terms': 'Terms of Service',
   },
   en: {
     // Navigation
@@ -289,33 +458,191 @@ const translations: Record<Language, Record<string, string>> = {
 
     'education.form.title': 'Register for Program',
     'education.benefits.title': 'Why Nebula?',
+'education.mastercard.feature1': 'Creating chatbots',
+'education.mastercard.feature2': 'Image recognition',
+'education.mastercard.feature3': 'Recommendation algorithms',
+'education.mastercard.feature4': 'Predictive analytics',
 
+'education.form.subtitle': 'Submit the form and we will contact you for the next course intake',
+
+'form.program': 'Choose Program',
+'form.programPlaceholder': 'Select a program',
+'form.education': 'Education Level',
+'form.educationPlaceholder': 'Select education level',
+'form.basic': 'Basic',
+'form.bachelor': 'Bachelor',
+'form.master': 'Master',
+'form.phd': 'PhD',
+'form.other': 'Other',
+'form.interest': 'Field of Interest',
+'form.sending': 'Sending...',
     // Business
-    'business.hero.title': 'AI Solutions for Your Business',
-    'business.hero.stats': 'Cost Reduction | Productivity Growth',
-    'business.hero.cta': 'Get Free Consultation',
+ 
+'business.hero.title': 'AI Solutions for Your Business',
+'business.hero.stats': 'cost reduction|productivity increase',
+'business.hero.cta': 'Get a Free Consultation',
+
+'business.services.audit.title': 'AI Audit & Strategy',
+'business.services.audit.feature1': 'Analysis of business processes',
+'business.services.audit.feature2': 'AI readiness assessment',
+'business.services.audit.feature3': 'Tailor-made AI strategy',
+'business.services.audit.feature4': 'ROI forecasting',
+
+'business.services.automation.title': 'Business Operations Automation',
+'business.services.automation.feature1': 'Power BI, Tableau integration',
+'business.services.automation.feature2': 'Asana, Jira automation',
+'business.services.automation.feature3': 'Document generation',
+'business.services.automation.feature4': 'Data structuring',
+
+'business.services.products.title': 'AI Products & SaaS',
+'business.services.products.feature1': 'Custom GPT chatbots in Georgian',
+'business.services.products.feature2': 'Self-service systems',
+'business.services.products.feature3': 'Dynamic pricing models',
+'business.services.products.feature4': 'Text-to-Speech & Speech-to-Text',
+
+'business.services.industry.title': 'Industry Solutions',
+'business.services.industry.feature1': 'Energy – forecasting',
+'business.services.industry.feature2': 'Finance – fraud detection',
+'business.services.industry.feature3': 'Logistics – route optimization',
+'business.services.industry.feature4': 'Aviation – flight planning',
+
+'business.services.cv.title': 'Computer Vision',
+'business.services.cv.feature1': 'CCTV integration',
+'business.services.cv.feature2': 'Object detection',
+'business.services.cv.feature3': 'Security systems',
+'business.services.cv.feature4': 'Quality control',
+
+'business.services.data.title': 'Data Management',
+'business.services.data.feature1': 'Data labeling',
+'business.services.data.feature2': 'Dataset preparation',
+'business.services.data.feature3': 'Model fine-tuning',
+'business.services.data.feature4': 'Data analysis',
+
+'business.form.title': 'Get a Free Consultation',
+'business.form.subtitle': 'Fill out the form and our team will contact you with tailored AI solutions',
+'business.form.company': 'Company Name',
+'business.form.contact': 'Contact Person',
+'business.form.industry': 'Industry',
+'business.form.industryPlaceholder': 'Select industry',
+'business.form.description': 'Project Description',
+'business.form.budget': 'Approximate Budget',
+
+'business.industry.energy': 'Energy',
+'business.industry.finance': 'Finance',
+'business.industry.logistics': 'Logistics',
+'business.industry.aviation': 'Aviation',
+'business.industry.retail': 'Retail',
+'business.industry.healthcare': 'Healthcare',
+'business.industry.education': 'Education',
+'business.industry.other': 'Other',
+
+  
 
     // Startups
-    'startups.hero.title': 'Realize Your AI Idea',
-    'startups.hero.subtitle': 'Technical support, funding, and mentorship',
-    'startups.hero.cta': 'Submit Your Idea',
+    // 'startups.hero.title': 'Realize Your AI Idea',
+    // 'startups.hero.subtitle': 'Technical support, funding, and mentorship',
+    // 'startups.hero.cta': 'Submit Your Idea',
+    // STARTUPS HERO
+'startups.hero.title': 'AI Support for Startups',
+'startups.hero.subtitle': 'Build, scale, and accelerate your startup with our full ecosystem of technical, business, and infrastructure support.',
+'startups.hero.cta': 'Apply Now',
+
+// OFFERINGS
+'startups.offerings.title': 'What We Offer',
+
+'startups.offerings.tech.title': 'Technical Support',
+'startups.offerings.tech.feature1': 'AI product development',
+'startups.offerings.tech.feature2': 'Technical consulting',
+'startups.offerings.tech.feature3': 'Code review',
+
+'startups.offerings.business.title': 'Business Support',
+'startups.offerings.business.feature1': 'Business model development',
+'startups.offerings.business.feature2': 'Go-to-market strategy',
+'startups.offerings.business.feature3': 'Customer management',
+
+'startups.offerings.funding.title': 'Funding',
+'startups.offerings.funding.feature1': 'Co-funding',
+'startups.offerings.funding.feature2': 'Investor connections',
+'startups.offerings.funding.feature3': 'Grant sourcing',
+
+'startups.offerings.infrastructure.title': 'Infrastructure',
+'startups.offerings.infrastructure.feature1': 'Cloud & GPU services',
+'startups.offerings.infrastructure.feature2': 'Workspace access',
+'startups.offerings.infrastructure.feature3': 'Technical equipment',
+
+'startups.offerings.network.title': 'Network & Mentorship',
+'startups.offerings.network.feature1': 'Experienced mentors',
+'startups.offerings.network.feature2': 'Partner network',
+'startups.offerings.network.feature3': 'Investor relations',
+
+// PROCESS
+'startups.process.title': 'Application Process',
+'startups.process.step1.title': 'Submit Application',
+'startups.process.step1.desc': 'Fill out the form online',
+'startups.process.step2.title': 'Pitch Your Idea',
+'startups.process.step2.desc': 'Present your idea to our team',
+'startups.process.step3.title': 'Evaluation',
+'startups.process.step3.desc': 'Review by our experts',
+'startups.process.step4.title': 'Acceptance',
+'startups.process.step4.desc': 'Start building with Nebula',
+
+// FORM
+'startups.form.title': 'Submit Your Startup',
+'startups.form.subtitle': 'Tell us more about your idea so we can evaluate your application.',
+'startups.form.startupName': 'Startup Name',
+'startups.form.description': 'Short Description',
+'startups.form.stage': 'Development Stage',
+'startups.form.stagePlaceholder': 'Select Stage',
+'startups.form.team': 'Team Overview',
+
+// STAGES
+'startups.stages.idea': 'Idea',
+'startups.stages.mvp': 'MVP',
+'startups.stages.beta': 'Beta',
+'startups.stages.ready': 'Launch Ready',
+
 
     // Careers
-    'careers.hero.title': 'Join the Nebula Team',
-    'careers.hero.subtitle': 'Work on future technologies',
-    'careers.positions.title': 'Open Positions',
-    'careers.internship.title': 'Internship and Junior Programs',
-'careers.hero.desc1': 'We believe that our employees are the most important asset. We create equal opportunities that allow people of different cultures and values to engage in work which is interesting and full of challenges.',
-'careers.hero.desc2': 'We learn, act, and develop together. We are never content with what we have achieved and continuously strive to improve on what we are today. In this endeavor, we are aided by continuous learning, mutual support, and an environment geared toward the achievement of goals.',
+     // CAREERS PAGE TRANSLATIONS (EN)
+'careers.hero.title': 'Join the Nebula Team',
+'careers.hero.subtitle': 'Work on future technologies',
+
+'careers.title': 'Careers at Nebula',
+'careers.desc1': 'We believe our people are our greatest asset. We create equal opportunities for individuals of all cultures and backgrounds to engage in meaningful, challenging work.',
+'careers.desc2': 'We learn, act, and grow together — constantly improving through continuous learning, collaboration, and a shared drive to achieve our goals.',
+
+'careers.benefit.real_projects': 'Real AI Projects',
+'careers.benefit.development': 'Professional Growth',
+'careers.benefit.partners': 'International Partners',
+'careers.benefit.team': 'Young Team',
+'careers.benefit.learning': 'Continuous Learning',
+
+'careers.internship.title': 'Internship and Junior Programs',
+'careers.internship.subtitle': 'Our top graduates are now part of Nebula AI Hub.',
+'careers.internship.program': 'Internship Program',
+'careers.internship.junior': 'Junior Positions',
+'careers.internship.mentorship': 'Mentorship',
+
+'careers.form.title': 'Submit Your Resume',
+'careers.form.position': 'Developer Position',
+'careers.form.positionPlaceholder': 'Select a Position',
+'careers.form.portfolio': 'Portfolio / GitHub Link',
+'careers.form.motivation': 'Motivation Letter',
+'careers.form.resume': 'Resume (PDF)',
+'careers.form.sending': 'Sending...',
+'careers.form.submit': 'Submit',
+
+
 
     // Contact
-    'contact.address': 'Address',
-    'contact.phone': 'Phone',
-    'contact.email': 'Email',
-    'contact.hours': 'Working Hours',
-    'contact.hours.weekdays': 'Monday - Friday: 10:00 - 18:00',
-    'contact.hours.weekend': 'Saturday-Sunday: Closed',
-    'contact.form.title': 'Send Us a Message',
+  
+   'contact.email': 'Email',
+'contact.phone': 'Phone',
+'contact.address': 'Address',
+'contact.address.full': 'Kutaisi, St. Nino N4',
+'contact.social': 'Social Media',
+
+
     
     // Form Fields
     'form.name': 'First Name',
@@ -327,6 +654,13 @@ const translations: Record<Language, Record<string, string>> = {
     'form.success': 'Successfully sent!',
     'form.required': 'This field is required',
 
+    "footer.services_list.ai_academy": "AI Academy",
+"footer.services_list.chatbots": "Chatbots",
+"footer.services_list.ai_solutions": "AI Solutions",
+"footer.services_list.industry_solutions": "Industry Solutions",
+"footer.services_list.computer_vision": "Computer Vision",
+"footer.services_list.data_analytics": "Data Analytics",
+
     // Footer
     'footer.description': 'Platform for AI education and innovation',
     'footer.quicklinks': 'Quick Links',
@@ -336,143 +670,4 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.privacy': 'Privacy Policy',
     'footer.terms': 'Terms of Service',
   },
-  ru: {
-    // Navigation
-    'nav.home': 'Главная',
-    'nav.about': 'О нас',
-    'nav.education': 'Образование',
-    'nav.business': 'Бизнес-услуги',
-    'nav.startups': 'Стартапы',
-    'nav.solutions': 'Наши решения',
-    'nav.careers': 'Карьера',
-    'nav.contact': 'Контакты',
-    
-    // Solutions
-    'solutions.hero.title': 'Наши решения',
-    'solutions.hero.subtitle': 'Расширяем возможности бизнеса с помощью инноваций на базе ИИ в юридических технологиях, создании контента, медиа-аналитике и не только',
-    
-    'solutions.legalguard.title': 'LegalGuard AI',
-    'solutions.legalguard.desc': 'Автоматизация документов на базе ИИ для юристов. LegalGuard упрощает управление документами для клиник и нотариусов, автоматически заполняя, редактируя и проверяя шаблоны с помощью простых команд или разговора—сокращая ошибки, экономя время и обеспечивая безопасную конфиденциальную обработку данных.',
-    
-    'solutions.travelplanner.title': 'TravelPlanner AI',
-    'solutions.travelplanner.desc': 'Ваш ИИ-помощник для планирования путешествий. TravelPlanner создает персонализированные маршруты, рассчитывает расходы заранее и легко связывает вас с сервисами бронирования. Интегрирован с данными о ценах и направлениях в реальном времени через партнерства с Kiwi, Booking.com и другими—делая планирование путешествий интуитивным и эффективным.',
-    
-    'solutions.media.title': 'Media Monitoring AI',
-    'solutions.media.desc': 'Мгновенно понимайте свой медиа-ландшафт с помощью автоматического мониторинга 24/7. Наш ИИ анализирует настроения, отслеживает упоминания бренда по всем каналам и предоставляет оповещения в реальном времени с практическими инсайтами. Получайте полную метрику доли голоса, анализ трендов и автоматическую отчетность—все на одной мощной платформе.',
-    
-    'solutions.contentai.title': 'ContentAI',
-    'solutions.contentai.desc': 'Создавайте, планируйте и публикуйте контент в 3 раза быстрее. ContentAI—это ваш набор для создания контента на базе ИИ для маркетологов и команд. Генерируйте визуальные материалы и текст в стиле бренда, планируйте на нескольких платформах и отслеживайте производительность—все с сохранением идеальной согласованности бренда.',
-    
-    'solutions.talentbridge.title': 'TalentBridge',
-    'solutions.talentbridge.desc': 'Соединяем исключительные таланты с прогрессивными компаниями. TalentBridge—это платформа подбора персонала на базе ИИ, которая связывает квалифицированных специалистов, ищущих возможности, с компаниями, ищущими идеальное совпадение. Наша интеллектуальная система подбора упрощает найм и помогает соискателям найти свою идеальную роль.',
-    
-    'solutions.explore': 'Изучить продукт',
-    'solutions.comingsoon': 'Скоро',
-
-    // Home Hero
-    'home.hero.title': 'Будущее ИИ начинается здесь',
-    'home.hero.subtitle': 'Пространство, где объединяются образование, инновации и бизнес-трансформация',
-    'home.hero.cta1': 'Начать обучение',
-    'home.hero.cta2': 'Бизнес-решения',
-
-    // Home Stats
-    'home.stats.students': 'Студентов',
-    'home.stats.courses': 'ИИ курсов',
-    'home.stats.coursera': 'Официальный партнер Coursera',
-    'home.stats.mastercard': 'Поддержка Mastercard',
-
-    // Home Services
-    'home.services.education.title': 'Образование',
-    'home.services.education.desc': 'Бесплатные курсы по ИИ при поддержке Coursera и Mastercard',
-    'home.services.business.title': 'Бизнес-услуги',
-    'home.services.business.desc': 'ИИ-решения для трансформации вашего бизнеса',
-    'home.services.startups.title': 'Инкубация стартапов',
-    'home.services.startups.desc': 'Поддержка и финансирование для ИИ-стартапов',
-    'home.services.learnmore': 'Узнать больше',
-
-    // Partners
-    'home.partners.title': 'Наши партнеры',
-
-    // CTA
-    'home.cta.title': 'Готовы к путешествию в мир ИИ?',
-    'home.cta.button1': 'Связаться с нами',
-    'home.cta.button2': 'Просмотреть курсы',
-
-    // About
-    'about.hero.title': 'Кто мы',
-    'about.hero.subtitle': 'Платформа для развития ИИ и подготовки будущих профессионалов',
-    'about.story.title': 'Наша история',
-    'about.story.content': 'Nebula AI Hub - это платформа, созданная на базе Кутаисского многофункционального центра для развития искусственного интеллекта и подготовки будущих профессионалов. Идея нашего создания возникла, когда стало ясно, что в Грузии почти не существовало доступных ресурсов по искусственному интеллекту, адаптированных на грузинский язык.',
-    'about.mission.quote': 'Развитие сферы искусственного интеллекта в регионе, от образования до инноваций и экономического роста',
-    
-    'about.values.title': 'Наши ценности',
-    'about.values.access': 'Доступ к знаниям',
-    'about.values.equality': 'Равные возможности',
-    'about.values.innovation': 'Локальные инновации, глобальный потенциал',
-    'about.values.ethics': 'Этичное развитие ИИ',
-
-    'about.team.title': 'Наша команда',
-    'about.partnerships.title': 'Партнерства',
-
-    // Education
-    'education.hero.title': 'Начните карьеру в ИИ сегодня - совершенно бесплатно',
-    'education.hero.subtitle': 'Международные курсы с поддержкой на грузинском языке',
-    'education.hero.cta': 'Зарегистрироваться сейчас',
-
-    'education.coursera.title': 'Международная программа Coursera',
-    'education.coursera.feature1': '250+ курсов по ИИ в 250 направлениях',
-    'education.coursera.feature2': 'Совершенно бесплатный доступ',
-    'education.coursera.feature3': 'Поддержка на грузинском языке',
-    'education.coursera.feature4': 'Международные сертификаты',
-
-    'education.mastercard.title': 'Практический курс Mastercard AI',
-    'education.btu.title': 'Студенческая программа БТУ',
-
-    'education.form.title': 'Регистрация на программу',
-    'education.benefits.title': 'Почему Nebula?',
-
-    // Business
-    'business.hero.title': 'ИИ-решения для вашего бизнеса',
-    'business.hero.stats': 'Снижение затрат | Рост производительности',
-    'business.hero.cta': 'Получить бесплатную консультацию',
-
-    // Startups
-    'startups.hero.title': 'Реализация вашей ИИ-идеи',
-    'startups.hero.subtitle': 'Техническая поддержка, финансирование и менторство',
-    'startups.hero.cta': 'Представить свою идею',
-
-    // Careers
-    'careers.hero.title': 'Присоединяйтесь к команде Nebula',
-    'careers.hero.subtitle': 'Работа над технологиями будущего',
-    'careers.positions.title': 'Открытые вакансии',
-    'careers.internship.title': 'Стажировка и Junior-программы',
-
-    // Contact
-    'contact.address': 'Адрес',
-    'contact.phone': 'Телефон',
-    'contact.email': 'Эл. почта',
-    'contact.hours': 'Часы работы',
-    'contact.hours.weekdays': 'Понедельник - Пятница: 10:00 - 18:00',
-    'contact.hours.weekend': 'Суббота-Воскресенье: Закрыто',
-    'contact.form.title': 'Отправьте нам сообщение',
-    
-    // Form Fields
-    'form.name': 'Имя',
-    'form.lastname': 'Фамилия',
-    'form.email': 'Эл. почта',
-    'form.phone': 'Телефон',
-    'form.message': 'Сообщение',
-    'form.submit': 'Отправить',
-    'form.success': 'Успешно отправлено!',
-    'form.required': 'Обязательное поле',
-
-    // Footer
-    'footer.description': 'Платформа для образования и инноваций в области ИИ',
-    'footer.quicklinks': 'Быстрые ссылки',
-    'footer.services': 'Услуги',
-    'footer.partners': 'Партнеры',
-    'footer.rights': 'Все права защищены',
-    'footer.privacy': 'Политика конфиденциальности',
-    'footer.terms': 'Условия использования',
-  },
-};
+}

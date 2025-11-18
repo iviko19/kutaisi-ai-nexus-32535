@@ -18,7 +18,7 @@ export default function About() {
     { name: 'BTU', desc: '400 students program' },
     { name: 'Kutaisi International University', desc: 'Academic Partnership' },
     { name: 'Fastoo', desc: 'Career opportunities' },
-    { name: 'ქუთაისის მულტიფუნქციური ცენტრი', desc: 'Base location' },
+    { name: ' Multifunctional Center', desc: 'Base location' },
   ];
 
   return (

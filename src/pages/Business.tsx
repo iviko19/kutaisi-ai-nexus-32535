@@ -145,7 +145,7 @@ export default function Business() {
           </h1>
 
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 animate-fade-in">
-            20–30% {stat1} | 40% {stat2}
+           {t('business.hero.stats')}
           </p>
 
           <Button

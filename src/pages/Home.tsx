@@ -5,15 +5,10 @@ import { GraduationCap, BookOpen, Award, Star, Briefcase, Rocket } from 'lucide-
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
+
 export default function Home() {
   const { t } = useLanguage();
 
-  const stats = [
-    { value: '1,400+', label: t('home.stats.students'), icon: GraduationCap },
-    { value: '250+', label: t('home.stats.courses'), icon: BookOpen },
-    { value: 'Coursera', label: t('home.stats.coursera'), icon: Award },
-    { value: 'Mastercard', label: t('home.stats.mastercard'), icon: Star },
-  ];
 
   const services = [
     {
@@ -44,6 +39,13 @@ export default function Home() {
     'Fastoo',
     'Multifunctional Center',
   ];
+  const stats = [
+  { icon: GraduationCap, value: "1500+", label: "home.stats.students" },
+  { icon: BookOpen, value: "250+", label: "home.stats.courses" },
+  { icon: Briefcase, value: "Official", label: "home.stats.coursera" },
+  { icon: Rocket, value: "Mastercard", label: "home.stats.mastercard" },
+];
+
 
   return (
     <div className="min-h-screen relative">
@@ -55,43 +57,47 @@ export default function Home() {
     <div className="max-w-5xl mx-auto text-center animate-fade-in">
 
       {/* Headline */}
-      <h1 className="font-orbitron text-5xl md:text-7xl font-bold 
+      <h1 className="font-orbitron  md:text-6xl font-bold 
                      bg-gradient-to-r from-primary via-accent to-primary 
-                     bg-clip-text text-transparent animate-gradient mt-8 mb-6">
-        {t('solutions.hero.title')}
+                     bg-clip-text text-transparent animate-gradient mt-8 mb-10">
+        {t('home.hero.title')}
       </h1>
 
       {/* Subtitle with BIG spacing below */}
-      <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-20">
-        {t('solutions.hero.subtitle')}
+      <p className=" md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-20">
+        {t('home.hero.subtitle')}
       </p>
 
-      {/* Buttons */}
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
+     {/*  Buttons */}
+<div className="flex flex-col sm:flex-row items-center justify-center gap-8">
 
-        {/* Gradient Button */}
-        <a
-          href="#"
-          className="px-12 py-6 rounded-xl text-xl font-semibold text-white
-                     bg-gradient-to-r from-[#EA8247] to-[#3D8DBC]
-                     shadow-xl hover:shadow-2xl hover:-translate-y-1
-                     transition-all duration-300 flex items-center gap-2"
-        >
-          Start Learning →
-        </a>
+  {/* Gradient Button */}
+  <a
+    href="#"
+    className="px-12 py-6 rounded-xl text-xl font-semibold text-white
+               bg-gradient-to-r from-[#EA8247] to-[#3D8DBC]
+               shadow-xl hover:shadow-2xl hover:-translate-y-1
+               transition-all duration-300 flex items-center gap-2"
+  >
+    {t("buttons.startLearning")} →
+  </a>
 
-        {/* Outline Button */}
-        <a
-          href="#"
-          className="px-12 py-6 rounded-xl text-xl font-semibold text-[#EA8247]
-                     border-2 border-[#EA8247]
-                     hover:bg-[#EA8247] hover:text-white 
-                     hover:shadow-xl hover:-translate-y-1
-                     transition-all duration-300"
-        >
-          Business Solutions
-        </a>
-      </div>
+  {/* Outline Button */}
+  <a
+    href="#"
+    className="px-12 py-6 rounded-xl text-xl font-semibold text-[#EA8247]
+               border-2 border-[#EA8247]
+               hover:bg-[#EA8247] hover:text-white 
+               hover:shadow-xl hover:-translate-y-1
+               transition-all duration-300"
+  >
+    {t("buttons.businessSolutions")}
+  </a>
+
+</div>
+
+
+
     </div>
   </div>
 </section>
@@ -148,41 +154,43 @@ export default function Home() {
       </section>
 
       {/* STATS SECTION – COSMIC STYLE */}
+    
       <section className="py-16 px-4">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+  <div className="container mx-auto">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
 
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="
-                  cosmic-card 
-                  text-center 
-                  p-8 
-                  rounded-xl 
-                  hover:scale-[1.03] 
-                  transition-transform 
-                  duration-300 
-                  animate-scale-in
-                "
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <stat.icon className="h-10 w-10 mx-auto mb-4 text-primary" />
+      {stats.map((stat, index) => (
+        <div
+          key={index}
+          className="
+            cosmic-card 
+            text-center 
+            p-8 
+            rounded-xl 
+            hover:scale-[1.03] 
+            transition-transform 
+            duration-300 
+            animate-scale-in
+          "
+          style={{ animationDelay: `${index * 0.1}s` }}
+        >
+          <stat.icon className="h-10 w-10 mx-auto mb-4 text-primary" />
 
-                <div className="font-space text-3xl md:text-4xl font-bold text-foreground mb-2">
-                  {stat.value}
-                </div>
-
-                <div className="font-space text-sm text-muted-foreground">
-                  {stat.label}
-                </div>
-
-              </div>
-            ))}
-
+          <div className="font-space text-3xl md:text-4xl font-bold text-foreground mb-2">
+            {stat.value}
           </div>
+
+          <div className="font-space text-sm text-muted-foreground">
+            {t(stat.label)}
+          </div>
+
         </div>
-      </section>
+      ))}
+
+    </div>
+  </div>
+</section>
+
 
       {/* PARTNERS SECTION – COSMIC STYLE */}
       <section className="py-20 px-4 border-t border-border">

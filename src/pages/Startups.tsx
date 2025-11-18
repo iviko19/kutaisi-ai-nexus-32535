@@ -251,9 +251,7 @@ export default function Startups() {
               {t('startups.form.title')}
             </h2>
 
-            <p className="text-center text-muted-foreground mb-10">
-              {t('startups.form.subtitle')}
-            </p>
+          
 
             <form onSubmit={handleSubmit} className="space-y-6">
 

@@ -114,17 +114,36 @@ export default function Careers() {
 
           <div className="space-y-6 text-lg text-muted-foreground max-w-3xl mx-auto">
             <p>{t('careers.desc1')}</p>
-            <p>{t('careers.desc2')}</p>
+            
           </div>
 
           <div className="mt-10">
-            <Button
+            {/* <Button
               size="lg"
               className="font-space bg-accent hover:bg-accent/90 text-accent-foreground text-base px-8 py-6 rounded-md"
               onClick={() => (window.location.href = '/open-jobs')}
             >
               View Open Jobs
-            </Button>
+            </Button> */}
+ <div className="w-full flex justify-center">
+  <Button
+    size="lg"
+    className="
+      px-8 py-4 
+      rounded-lg 
+      text-lg font-semibold text-white
+      bg-gradient-to-r from-[#EA8247] to-[#3D8DBC]
+      shadow-lg hover:shadow-xl hover:-translate-y-1
+      transition-all duration-300
+      flex items-center justify-center gap-2
+    "
+    onClick={() => (window.location.href = '/open-jobs')}
+  >
+    {t("buttons.viewOpenJobs")}
+  </Button>
+</div>
+
+
           </div>
 
         </div>

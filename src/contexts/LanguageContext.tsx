@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-type Language = 'ka' | 'en' | 'ru';
+type Language = 'ka' | 'en' ;
 
 interface LanguageContextType {
   language: Language;
@@ -53,23 +53,24 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.contact': 'კონტაქტი',
     
     // Solutions
-    'solutions.hero.title': 'ჩვენი გადაწყვეტები',
-    'solutions.hero.subtitle': 'ვამძლიერებთ ბიზნესებს AI-ით მართულ ინოვაციებით იურიდიულ ტექნოლოგიებში, კონტენტის შექმნაში, მედია ინტელექტსა და მის მიღმა',
+    'solutions.hero.title': 'ხელოვნური ინტელექტის პრაქტიკული გადაწყვეტები რეალური ბიზნეს ამოცანებისთვის',
+    'solutions.hero.subtitle': 'შეამცირეთ ხარჯები, გაზარდეთ პროდუქტიულობა. ჩვენ ვქმნით პრაქტიკულ AI სისტემებს, რომლებიც აძლიერებს ეფექტურობას იურიდიულ სექტორში, კონტენტის შექმნაში, მედიაში და მის მიღმა.',
     
     'solutions.legalguard.title': 'LegalGuard AI',
-    'solutions.legalguard.desc': 'LegalGuard AI არის ხელოვნური ინტელექტით მხარდაჭერილი პლატფორმა, რომელიც ამარტივებს დოკუმენტების მართვას კლინიკებისა და ნოტარიუსებისთვის. ჩვენი სისტემა ავტომატურად ავსებს, არედაქტირებს და ამოწმებს თქვენ მიერ მოწოდებულ შაბლონებს — მხოლოდ მარტივი ბრძანების ან საუბრის საშუალებით. ჩვენი სერვისი ამცირებს დროს, ხარვეზებს, და უზრუნველყოფს მონაცემების უსაფრთხო, საიმედო დამუშავებას, სრული კონფიდენციალურობის დაცვით.',
+    'solutions.legalguard.desc': 'LegalGuard AI არის AI სისტემებით აღჭურვილი პლატფორმა, რომელიც ამარტივებს დოკუმენტების მართვას იურისტებისთვის, კლინიკებისა და ნოტარიუსებისთვის. ჩვენი სისტემა ავტომატურად ავსებს, არედაქტირებს და ამოწმებს შენს მიერ მოწოდებულ შაბლონებს მხოლოდ მარტივი ბრძანების ან ხმოვანი მითითების მეშვეობით. ჩვენი სერვისი ამცირებს ოპერაციულ დროსა და ხარვეზებს და უზრუნველყოფს მონაცემების უსაფრთხო და საიმედო დამუშავებას სრული კონფიდენციალურობის დაცვით.',
     
     'solutions.travelplanner.title': 'TravelPlanner AI',
-    'solutions.travelplanner.desc': 'ხელოვნურ ინტელექტზე დაფუძნებული პლატფორმა პერსონალიზებული მოგზაურობის დასაგეგმად. TravelPlanner გიქმნით მორგებულ მარშრუტებს, გათვლით ხარჯებს და გაძლევთ მარტივ წვდომას დაჯავშნის სერვისებთან. ინტეგრირებული რეალურ დროში განახლებად ფასებთან და დანიშნულების მონაცემებთან, რაც მოგზაურობის დაგეგმვას ინტუიტიურსა და ეფექტურს ხდის.',
+    'solutions.travelplanner.desc': 'TravelPlanner არის ხელოვნური ინტელექტით ოპტიმიზირებული პლატფორმა, რომელიც პერსონალიზებული მოგზაურობის დასაგეგმად შეიქმნა. TravelPlanner გიქმნის შენზე მორგებულ მარშრუტებს, ითვლის ხარჯებს და გაძლევს მარტივ წვდომას დაჯავშნის სერვისებთან.',
     
     'solutions.media.title': 'Media Monitoring AI',
-    'solutions.media.desc': 'გაიგეთ თქვენი მედია ლანდშაფტი მყისიერად 24/7 ავტომატური მონიტორინგით. ჩვენი AI აანალიზებს სენტიმენტს, აკონტროლებს ბრენდის ხსენებებს ყველა არხზე და აძლევს რეალურ დროში შეტყობინებებს მოქმედი ინსაითებით. მიიღეთ სრული Share of Voice მეტრიკა, ტრენდების ანალიზი და ავტომატური რეპორტინგი—ერთ ძლიერ პლატფორმაზე.',
+    'solutions.media.desc': 'სრული სურათის მიღება. ჩვენი გადაწყვეტა არის AI-ზე დაფუძნებული 24/7 მონიტორინგი, რომელიც ამ პრობლემას აგვარებს. სისტემა იღებს მონაცემებს მრავალი წყაროდან და საბოლოოდ შენ მიიღებ სრულ ინფორმაციას, რამდენს საუბრობენ შენს ბრენდზე, ტრენდების ანალიზსა და ავტომატურ რეპორტინგს — ყველაფერს ერთ მძლავრ პლატფორმაზე.',
     
     'solutions.contentai.title': 'ContentAI',
-    'solutions.contentai.desc': 'შექმენით, დაგეგმეთ და გამოაქვეყნეთ კონტენტი 3-ჯერ სწრაფად. ContentAI არის თქვენი AI-ით გაძლიერებული კონტენტ შექმნის პაკეტი მარკეტერებისა და გუნდებისთვის. გენერირება ბრენდის შესაბამისი ვიზუალებისა და ტექსტის, დაგეგმვა მრავალ პლატფორმაზე და შესრულების თვალთვალი—ყველაფერი ბრენდის სრულყოფილი შესაბამისობის შენარჩუნებით.',
+    'solutions.contentai.desc': 'ContentAI არის ხელოვნური ინტელექტით ოპტიმიზებული, სრულფასოვანი პლატფორმა შენი მარკეტინგული გუნდისთვის. ის ბრენდის იდენტობის სრული დაცვით აგენერირებს, გეგმავს და აქვეყნებს ვიზუალურ თუ ტექსტურ მასალას მყისიერად, მრავალ სოციალურ არხზე ერთდროულად. AI ავტომატურად ითვალისწინებს ოპტიმალური ჩართულობის დროს, ხოლო შენ აკონტროლებ შესრულებას და აუმჯობესებ შენს სტრატეგიას.',
     
     'solutions.talentbridge.title': 'TalentBridge',
-    'solutions.talentbridge.desc': 'დაუკავშირეთ განსაკუთრებული ტალანტები პროგრესული კომპანიებისთვის. TalentBridge არის AI-ით გაძლიერებული რეკრუტინგის პლატფორმა, რომელიც აკავშირებს კვალიფიციურ პროფესიონალებს შესაძლებლობების ძიებაში და კომპანიებს, რომლებიც ეძებენ სრულყოფილ მატჩს. ჩვენი ინტელექტუალური მეჩინგ სისტემა ამარტივებს დაქირავებას და აძლიერებს სამუშაოს მაძიებლებს.',
+    'solutions.talentbridge.desc': 'TalentBridge ჩვენი რეკრუტინგის პლატფორმაა, რომელიც აკავშირებს კვალიფიცირებულ IT სპეციალისტებს შესაძლებლობების ძიებაში და კომპანიებს, რომლებიც ეძებენ სრულყოფილ კანდიდატს. ჩვენი ხელოვნური ინტელექტით მხარდაჭერილი სისტემა ამარტივებს დაქირავების პროცესს და უზრუნველყოფს კანდიდატისა და კომპანიის საუკეთესო შესაბამისობას.',
+
 
    'careers.title': 'კარიერა Nebula-ში',
 'careers.desc1': 'ჩვენ გვჯერა, რომ ჩვენი თანამშრომლები ყველაზე მნიშვნელოვანი რესურსია. ჩვენ ვქმნით თანაბარ შესაძლებლობებს, რომლებიც სხვადასხვა კულტურის და ღირებულებების მქონე ადამიანებს აძლევს საშუალებას ჩაერთონ საინტერესო და გამოწვევებით სავსე სამუშაოში.',
@@ -82,53 +83,53 @@ const translations: Record<Language, Record<string, string>> = {
     'solutions.comingsoon': 'მალე',
 
     // Home Hero
-    'home.hero.title': 'ხელოვნური ინტელექტის მომავალი იწყება აქ',
-    'home.hero.subtitle': 'სივრცე, სადაც განათლება, ინოვაცია და ბიზნესის ტრანსფორმაცია ერთიანდება',
+    'home.hero.title': 'განათლებიდან რეალურ ინდუსტრიამდე',
+    'home.hero.subtitle': 'ჩვენ ვქმნით ინოვაციურ ეკოსისტემას, რომელიც პირდაპირ უკავშირდებაეკონომიკურ წინსვლას, განათლებისა და ხელოვნური ინტელექტისტრანსფორმაციით',
     'home.hero.cta1': 'დაიწყე სწავლა',
     'home.hero.cta2': 'ბიზნეს გადაწყვეტები',
-
-    // Home Stats
-    'home.stats.students': 'სტუდენტი',
-    'home.stats.courses': 'AI კურსი',
-    'home.stats.coursera': 'Official Coursera Partner',
-    'home.stats.mastercard': 'Mastercard Support',
+    'buttons.startLearning': 'ისწავლე უფასოდ',
+'buttons.businessSolutions': 'ნახე AI გადაწყვეტები',
 
     // Home Services
     'home.services.education.title': 'განათლება',
-    'home.services.education.desc': 'უფასო AI კურსები Coursera და Mastercard-ის მხარდაჭერით',
-    'home.services.business.title': 'ბიზნეს სერვისები',
-    'home.services.business.desc': 'AI გადაწყვეტები თქვენი ბიზნესის ტრანსფორმაციისთვის',
+    'home.services.education.desc': 'გლობალური AI განათლება. უფასოდ, საერთაშორისო სერტიფიკატით',
+    'home.services.business.title': 'AI გადაწყვეტები ბიზნესისთვის',
+    'home.services.business.desc': 'პროცესების სრული ავტომატიზაცია კონკურენტუნარიანობის გასაძლიერებლად',
     'home.services.startups.title': 'სტარტაპ ინკუბაცია',
-    'home.services.startups.desc': 'მხარდაჭერა და დაფინანსება AI სტარტაპებისთვის',
+    'home.services.startups.desc': 'ტექნოლოგიური პროდუქტის განვითარება და ინოვაციის კომერციალიზაცია',
     'home.services.learnmore': 'გაიგე მეტი',
 
     // Partners
     'home.partners.title': 'ჩვენი პარტნიორები',
+'home.stats.students': 'კურსდამთავრებული',
+'home.stats.courses': 'საგანმანათლებლო პროგრამა',
+'home.stats.coursera': 'ოფიციალური  პარტნიორი',
+'home.stats.mastercard': 'სტრატეგიული თანამშრომლობა',
 
     // CTA
-    'home.cta.title': 'მზად ხარ AI მოგზაურობისთვის?',
+    'home.cta.title': 'დაიწყე AI ტრანსფორმაცია დღესვე',
     'home.cta.button1': 'დაგვიკავშირდი',
-    'home.cta.button2': 'ნახე კურსები',
+    'home.cta.button2': 'ისწავლე უფასოდ',
 
     // About
-    'about.hero.title': 'ვინ ვართ ჩვენ',
-    'about.hero.subtitle': 'პლატფორმა ხელოვნური ინტელექტის განვითარებისა და მომავლის პროფესიონალების მომზადებისთვის',
-    'about.story.title': 'ჩვენი ისტორია',
-    'about.story.content': 'Nebula AI Hub არის ქუთაისის მულტიფუნქციური ცენტრის ბაზაზე შექმნილი პლატფორმა ხელოვნური ინტელექტის განვითარებისა და მომავლის პროფესიონალების მომზადების მიზნით. ჩვენი დაარსების იდეა გაჩნდა მაშინ, როდესაც გააცნობიერდა, რომ საქართველოში ხელოვნური ინტელექტის მიმართულებით, ქართულ ენაზე მორგებული, ხელმისაწვდომი რესურსები თითქმის არ არსებობდა.',
-    'about.mission.quote': 'ხელოვნური ინტელექტის სფეროს განვითარება რეგიონში, განათლებიდან ინოვაციამდე და ეკონომიკურ ზრდამდე',
+    'about.hero.title': 'წამყვანი AI ჰაბი',
+    'about.hero.subtitle': 'პლატფორმა, რომელიც ორიენტირებულია ხელოვნური ინტელექტის განვითარებაზე, მომავლის პროფესიონალების მომზადებასა და ბიზნესის მიერ AI-ის საუკეთესოდ გამოყენებაზე',
+    'about.story.title': 'ჩვენი ამბავი',
+    'about.story.content': 'ქუთაისის მულტიფუნქციურ ცენტრში გაჩნდა იდეა საქართველოში ხელოვნური ინტელექტის განვითარების შესახებ. ამ ინიციატივის მთავარი მიზანი იყო AI-ის გადაქცევა ეკონომიკური პროგრესის ინსტრუმენტად. სწორედ ამ მიზნის მისაღწევად, ჩვენი სტრატეგიული მიმართულება განათლებით დაიწყო. პლატფორმის ფარგლებში, ასობით ახალგაზრდამ გაიარა Coursera-ს საერთაშორისო კურსები და Mastercard-ის მხარდაჭერით შემუშავებული ხელოვნური ინტელექტის სასწავლო პროგრამა. ამ პროგრამების წარმატებულმა კურსდამთავრებულებმა, როგორც მაღალკვალიფიციურმა პროფესიონალებმა, შექმნეს Nebula AI Hub-ის ძირითადი გუნდი. ამ კომპეტენციურმა რესურსმა მოგვცა შანსი, გადავსულიყავით შემდეგ ეტაპზე: ჩვენ მივეცით ახალგაზრდა პროფესიონალებს შანსი, შეექმნათ პრაქტიკული AI გადაწყვეტილებები და ტექნოლოგიური პროდუქტები (SaaS მოდელების ჩათვლით). ამ პროდუქტების შექმნის მთავარი მიზანია ბიზნესის მიერ AI-ის საუკეთესოდ გამოყენება — პროცესების ავტომატიზაცია, მონაცემთა ინტელექტუალური ანალიტიკა და ორგანიზაციების ციფრული ტრანსფორმაციის დაჩქარება. შედეგად, ჩვენ ვახდენთ ცოდნის კომერციალიზაციას და ვქმნით ახალ ეკონომიკურ შესაძლებლობებს თანამედროვე საქართველოსთვის და მსოფლიოსთვის.',
+    'about.mission.quote': 'ვაჩქარებთ ციფრულ ტრანსფორმაციას და ვქმნით ახალ ეკონომიკურ შესაძლებლობებს',
     
     'about.values.title': 'ჩვენი ღირებულებები',
-    'about.values.access': 'ხელმისაწვდომობა ცოდნაზე',
-    'about.values.equality': 'თანაბარი შესაძლებლობები',
-    'about.values.innovation': 'ლოკალური ინოვაციის გლობალური პოტენციალი',
-    'about.values.ethics': 'AI ტექნოლოგიების ეთიკური განვითარება',
+    'about.values.access': 'ცოდნის სრული ხელმისაწვდომობა ',
+    'about.values.equality': 'თანაბარი შესაძლებლობები და ინკლუზიურობა',
+    'about.values.innovation': 'ლოკალური ინოვაცია, გლობალური პოტენციალით',
+    'about.values.ethics': 'AI ტექნოლოგიების ეთიკური და პასუხისმგებლიანი განვითარება',
 
     'about.team.title': 'ჩვენი გუნდი',
     'about.partnerships.title': 'პარტნიორობები',
 
     // Education
 
-    'education.hero.title': 'დაიწყე AI კარიერა დღესვე - სრულიად უფასოდ',
+    'education.hero.title': 'AI ცოდნა მსოფლიო გიგანტების სტანდარტით',
     'education.hero.subtitle': 'საერთაშორისო კურსები ქართულენოვანი მხარდაჭერით',
     'education.hero.cta': 'დარეგისტრირდი ახლავე',
 
@@ -137,17 +138,16 @@ const translations: Record<Language, Record<string, string>> = {
     'education.coursera.feature2': 'სრულიად უფასო წვდომა',
     'education.coursera.feature3': 'ქართულენოვანი მხარდაჭერა',
     'education.coursera.feature4': 'საერთაშორისო სერტიფიკატები',
-
-    'education.mastercard.title': 'Mastercard AI პრაქტიკული კურსი',
-    'education.btu.title': 'BTU სტუდენტური პროგრამა',
-
-    'education.form.title': 'დარეგისტრირდი პროგრამაზე',
+    'education.programs.title': 'ჩვენი პროგრამები',
     'education.benefits.title': 'რატომ Nebula?',
+      'education.mastercard.title': 'Mastercard AI პრაქტიკული კურსი',
 'education.mastercard.feature1': 'ჩატბოტების შექმნა',
 'education.mastercard.feature2': 'სურათების ამოცნობა',
 'education.mastercard.feature3': 'რეკომენდაციის ალგორითმები',
 'education.mastercard.feature4': 'პროგნოზირებადი ანალიტიკა',
-'education.form.subtitle': 'გამოგვიგზავნეთ ფორმა და დაგიკავშირდებით კურსის შემდეგ მიღებისთვის',
+
+    'education.form.title': 'შეავსე ფორმა და დაელოდე უკუკავშირს',
+// 'education.form.subtitle': 'გამოგვიგზავნეთ ფორმა და დაგიკავშირდებით კურსის შემდეგ მიღებისთვის',
 
 'form.program': 'აირჩიე პროგრამა',
 'form.programPlaceholder': 'აირჩიე პროგრამა',
@@ -165,8 +165,8 @@ const translations: Record<Language, Record<string, string>> = {
     // 'business.hero.stats': 'ხარჯების შემცირება | პროდუქტიულობის ზრდა',
     // 'business.hero.cta': 'მიიღე უფასო კონსულტაცია',
     // BUSINESS – KA
-'business.hero.title': 'AI გადაწყვეტილებები თქვენი ბიზნესისთვის',
-'business.hero.stats': 'ხარჯების შემცირება|პროდუქტიულობის ზრდა',
+'business.hero.title': 'AI გადაწყვეტილებები  ბიზნესისთვის',
+'business.hero.stats': 'შეამცირე ხარჯები, გაზარდე პროდუქტიულობა. ჩვენ ვქმნით პრაქტიკულ AI სისტემებს, რომლებიც აძლიერებს ეფექტურობას, ინოვაციას და კონკურენტუნარიანობას.',
 'business.hero.cta': 'მიიღე უფასო კონსულტაცია',
 
 'business.services.audit.title': 'AI აუდიტი და სტრატეგია',
@@ -225,13 +225,9 @@ const translations: Record<Language, Record<string, string>> = {
 
 
     // Startups
-    // 'startups.hero.title': 'შენი AI იდეის რეალიზაცია',
-    // 'startups.hero.subtitle': 'ტექნიკური მხარდაჭერა, დაფინანსება და მენტორობა',
-    // 'startups.hero.cta': 'წარადგინე შენი იდეა',
-    // STARTUPS HERO
-// HERO
-'startups.hero.title': 'AI მხარდაჭერა სტარტაპებისთვის',
-'startups.hero.subtitle': 'განვითარე, დაასქეილე და დააჩქარე შენი სტარტაპი ჩვენი ტექნიკური, ბიზნეს და ინფრასტრუქტურული ეკოსისტემით.',
+    
+'startups.hero.title': 'შენი AI იდეის რეალიზაცია: ტექნოლოგიური პროდუქტი კომერციალიზაციისთვის',
+'startups.hero.subtitle': 'ვეხმარებით სტარტაპებს ტექნოლოგიურ განვითარებასა და ზრდაში. ეს მოიცავს ტექნიკურ მხარდაჭერას, ინვესტირებას შიდა კვლევისა და განვითარების მიმართულებით და მოდელების კომერციალიზაციას.',
 'startups.hero.cta': 'განაცხადის შევსება',
 
 // OFFERINGS
@@ -274,8 +270,8 @@ const translations: Record<Language, Record<string, string>> = {
 'startups.process.step4.desc': 'დაიწყე მუშაობა Nebula-სთან',
 
 // FORM
-'startups.form.title': 'წარადგინე შენი სტარტაპი',
-'startups.form.subtitle': 'მოგვიყევი მეტი თქვენს იდეაზე, რათა შევაფასოთ განაცხადი.',
+'startups.form.title': 'გამოგვიგზავნე შენი იდეა',
+
 'startups.form.startupName': 'სტარტაპის სახელი',
 'startups.form.description': 'მოკლე აღწერა',
 'startups.form.stage': 'განვითარების ეტაპი',
@@ -291,12 +287,13 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Careers
   // CAREERS PAGE TRANSLATIONS (KA)
-'careers.hero.title': 'შემოუერთდი Nebula გუნდს',
-'careers.hero.subtitle': 'მუშაობა მომავლის ტექნოლოგიებზე',
+'careers.hero.title': 'შემოუერთდი ჩვენს ვარსკვლავურ გუნდს',
+'careers.hero.subtitle': 'იმუშავე მომავლის ტექნოლოგიებზე',
 
-'careers.title': 'კარიერა Nebula-ში',
-'careers.desc1': 'ჩვენ გვჯერა, რომ ჩვენი თანამშრომლები ყველაზე მნიშვნელოვანი რესურსია. ჩვენ ვქმნით თანაბარ შესაძლებლობებს სხვადასხვა კულტურის ადამიანებისთვის.',
-'careers.desc2': 'ჩვენ ერთად ვსწავლობთ, ვმოქმედებთ და ვითარდებით — მუდმივად ვცდილობთ გავაუმჯობესოთ ჩვენი თავი უწყვეტი სწავლითა და მხარდაჭერით.',
+'careers.title': 'შექმენი მომავალი',
+'careers.desc1': 'ჩვენ გვჯერა, რომ ორგანიზაციის მთავარი ღირებულება ადამიანები არიან — ისინი, ვინც ქმნიან ინოვაციას, ავითარებენ ცოდნას და მოძრაობენ ტექნოლოგიური მომავლისკენ. ჩვენთვის მნიშვნელოვანია ისეთი გარემოს შექმნა, სადაც სხვადასხვა გამოცდილების, კულტურისა და შეხედულებების მქონე ადამიანები თანაბარ შესაძლებლობებს იღებენ და საკუთარ უნარებს სრულად იყენებენ. ერთად ვსწავლობთ, ერთად ვმოქმედებთ და ერთად ვვითარდებით. ჩვენი გუნდი არასდროს რჩება ერთ ადგილზე — მუდმივად ვისწრაფვით უკეთესობისკენ და ვაშენებთ სამუშაო კულტურას.',
+'buttons.viewOpenJobs': 'ნახე ღია ვაკანსიები',
+
 
 'careers.benefit.real_projects': 'რეალური AI პროექტები',
 'careers.benefit.development': 'პროფესიული განვითარება',
@@ -348,14 +345,14 @@ const translations: Record<Language, Record<string, string>> = {
 
 
 
-    // Footer
-    // 'footer.description': 'პლატფორმა AI განათლებისა და ინოვაციისთვის',
-    // 'footer.quicklinks': 'სწრაფი ბმულები',
-    // 'footer.services': 'სერვისები',
-    // 'footer.partners': 'პარტნიორები',
-    // 'footer.rights': 'ყველა უფლება დაცულია',
-    // 'footer.privacy': 'Privacy Policy',
-    // 'footer.terms': 'Terms of Service',
+    //Footer
+    'footer.description': 'პლატფორმა AI განათლებისა და ინოვაციისთვის',
+    'footer.quicklinks': 'სწრაფი ბმულები',
+    'footer.services': 'სერვისები',
+    'footer.partners': 'პარტნიორები',
+    'footer.rights': 'ყველა უფლება დაცულია',
+    'footer.privacy': 'Privacy Policy',
+    'footer.terms': 'Terms of Service',
   },
   en: {
     // Navigation
@@ -369,24 +366,21 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.contact': 'Contact',
     
     // Solutions
-    'solutions.hero.title': 'Our Solutions',
-    'solutions.hero.subtitle': 'Empowering businesses with AI-driven innovation across legal tech, content creation, media intelligence, and beyond',
+    'solutions.hero.title': 'Practical AI Solutions for Real-World Business Challenges',
+    'solutions.hero.subtitle': 'Reduce Costs, Increase Productivity. We develop practical AI systems that boost efficiency across the legal sector, content creation, media intelligence, and beyond.',
     
     'solutions.legalguard.title': 'LegalGuard AI',
-    'solutions.legalguard.desc': 'AI-powered document automation for legal professionals. LegalGuard streamlines document management for clinics and notaries, automatically filling, editing, and validating templates through simple commands or conversation—reducing errors, saving time, and ensuring secure, confidential data handling.',
+    'solutions.legalguard.desc': 'LegalGuard AI: An AI-equipped platform that simplifies document management for lawyers, clinics, and notaries. Our system automatically completes, edits, and verifies the templates you provide via simple text or voice commands. It reduces operational time and errors, ensuring secure and reliable data processing with full confidentiality.',
     
     'solutions.travelplanner.title': 'TravelPlanner AI',
-    'solutions.travelplanner.desc': 'Your AI-powered travel planning assistant. TravelPlanner creates personalized itineraries, calculates costs in advance, and seamlessly connects you with booking services. Integrated with real-time pricing and destination data through partnerships with Kiwi, Booking.com, and more—making travel planning intuitive and efficient.',
-    
+    'solutions.travelplanner.desc': 'TravelPlanner AI: An AI-optimized platform designed for personalized travel planning. TravelPlanner creates customized itineraries, calculates expenses, and gives you easy access to booking services.',
     'solutions.media.title': 'Media Monitoring AI',
-    'solutions.media.desc': 'Understand your media landscape instantly with 24/7 automated monitoring. Our AI analyzes sentiment, tracks brand mentions across all channels, and delivers real-time alerts with actionable insights. Get comprehensive share of voice metrics, trend analysis, and automated reporting—all on one powerful platform.',
-    
+    'solutions.media.desc': 'Media Monitoring AI: Companies struggle to get a complete picture of media coverage about themselves and their competitors. Our solution is AI-based 24/7 monitoring, which solves this problem. The system processes data from multiple sources and provides full information on brand share, trend analysis, and automated reporting—all in one powerful platform.',
     'solutions.contentai.title': 'ContentAI',
-    'solutions.contentai.desc': 'Create, schedule, and publish content 3x faster. ContentAI is your AI-powered content creation suite for marketers and teams. Generate on-brand visuals and copy, schedule across multiple platforms, and track performance—all while maintaining perfect brand consistency with smart templates and automated workflows.',
+    'solutions.contentai.desc': 'ContentAI: A comprehensive, AI-optimized platform for your marketing team. It generates, schedules, and publishes visual and text content while maintaining full brand identity consistency. This happens instantly across multiple social channels, with AI optimizing engagement times while you track performance and refine your strategy.',
     
     'solutions.talentbridge.title': 'TalentBridge',
-    'solutions.talentbridge.desc': 'Connecting exceptional talent with forward-thinking companies. TalentBridge is an AI-powered recruitment platform that bridges the gap between skilled professionals seeking opportunities and companies searching for the perfect match. Our intelligent matching system streamlines hiring while empowering job seekers to connect with their ideal roles.',
-    
+    'solutions.talentbridge.desc': 'TalentBridge: Our recruiting platform connects qualified IT specialists seeking opportunities with companies looking for the perfect match. Our AI-supported system simplifies the hiring process and ensures the best alignment between candidates and employers.',
     'careers.title': 'Career in',
     'careers.desc1': 'We believe that our employees are the most important asset. We create equal opportunities that allow people of different cultures and values to engage in work which is interesting and full of challenges.',
     'careers.desc2': 'We learn, act, and develop together. We are never content with what we have achieved and continuously strive to improve on what we are today. In this endeavor, we are aided by continuous learning, mutual support, and an environment geared toward the achievement of goals.',
@@ -398,52 +392,56 @@ const translations: Record<Language, Record<string, string>> = {
     'solutions.comingsoon': 'Coming Soon',
 
     // Home Hero
-    'home.hero.title': 'The Future of AI Starts Here',
-    'home.hero.subtitle': 'A space where education, innovation, and business transformation unite',
-    'home.hero.cta1': 'Start Learning',
-    'home.hero.cta2': 'Business Solutions',
+    'home.hero.title': 'From Education to Real Industry',
+    'home.hero.subtitle': 'We are building an innovative ecosystem that directly links to economic progress through AI education and technological transformation.',
+    
+    'buttons.startLearning': 'Start Learning for Free',
+    'buttons.businessSolutions': 'Explore AI Solutions',
+
+
 
     // Home Stats
-    'home.stats.students': 'Students',
-    'home.stats.courses': 'AI Courses',
-    'home.stats.coursera': 'Official Coursera Partner',
-    'home.stats.mastercard': 'Mastercard Support',
+   'home.stats.students': 'Students',
+'home.stats.courses': 'AI Courses',
+'home.stats.coursera': 'Official Coursera Partner',
+'home.stats.mastercard': 'Mastercard Support',
+
 
     // Home Services
     'home.services.education.title': 'Education',
-    'home.services.education.desc': 'Free AI courses with Coursera and Mastercard support',
+    'home.services.education.desc': 'Global AI Education. Free Access, International Certification.',
     'home.services.business.title': 'Business Services',
-    'home.services.business.desc': 'AI solutions for your business transformation',
+    'home.services.business.desc': 'Business Solutions: AI Solutions for Business: Full Process Automation to Boost Competitiveness.',
     'home.services.startups.title': 'Startup Incubation',
-    'home.services.startups.desc': 'Support and funding for AI startups',
+    'home.services.startups.desc': 'Startup Incubation: Startup Incubation: Tech Product Development and Innovation Commercialization',
     'home.services.learnmore': 'Learn More',
 
     // Partners
     'home.partners.title': 'Our Partners',
 
     // CTA
-    'home.cta.title': 'Ready for Your AI Journey?',
+    'home.cta.title': 'Start Your AI Transformation Today',
     'home.cta.button1': 'Contact Us',
     'home.cta.button2': 'View Courses',
 
     // About
-    'about.hero.title': 'Who We Are',
-    'about.hero.subtitle': 'A platform for AI development and training future professionals',
+    'about.hero.title': 'Leading AI Hub',
+    'about.hero.subtitle': 'Platform focused on advancing Artificial Intelligence, preparing future professionals, and ensuring optimal AI adoption by businesses.',
     'about.story.title': 'Our Story',
-    'about.story.content': 'Nebula AI Hub is a platform created at the Kutaisi Multifunctional Center for the development of artificial intelligence and training future professionals. Our founding idea emerged when we realized that in Georgia, accessible resources adapted to the Georgian language in the field of artificial intelligence were almost non-existent.',
-    'about.mission.quote': 'Developing the AI sector in the region, from education to innovation and economic growth',
+    'about.story.content': 'Our journey began at Kutaisi Multifunctional Center with a vision to advance Artificial Intelligence in Georgia. The core mission of this initiative was to transform AI into an instrument for economic progress. Our strategic focus started with education.Hundreds of young professionals completed international Coursera courses and anAI training program supported by Mastercard. These successful graduates, highlyqualified professionals, formed the core team of Nebula AI Hub. This skilled teamenabled us to create practical AI solutions and technological products (includingSaaS models) aimed at the optimal use of AI in business. By automating processes,analyzing data intelligently, and accelerating digital transformation, we arecommercializing knowledge and creating new economic opportunities for modernGeorgia and the world.',
+    'about.mission.quote': 'We accelerate digital transformation and create new economic opportunities ',
     
     'about.values.title': 'Our Values',
-    'about.values.access': 'Access to Knowledge',
-    'about.values.equality': 'Equal Opportunities',
+    'about.values.access': 'Full Access to Knowledge',
+    'about.values.equality': 'Equal Opportunities and Inclusivity',
     'about.values.innovation': 'Local Innovation, Global Potential',
-    'about.values.ethics': 'Ethical AI Development',
+    'about.values.ethics': 'Ethical and Responsible AI Development',
 
     'about.team.title': 'Our Team',
     'about.partnerships.title': 'Partnerships',
 
     // Education
-    'education.hero.title': 'Start Your AI Career Today - Completely Free',
+    'education.hero.title': 'AI Knowledge by Global Giants Standards',
     'education.hero.subtitle': 'International courses with Georgian language support',
     'education.hero.cta': 'Register Now',
 
@@ -452,7 +450,7 @@ const translations: Record<Language, Record<string, string>> = {
     'education.coursera.feature2': 'Completely free access',
     'education.coursera.feature3': 'Georgian language support',
     'education.coursera.feature4': 'International certificates',
-
+'education.programs.title': 'Our Programs',
     'education.mastercard.title': 'Mastercard AI Practical Course',
     'education.btu.title': 'BTU Student Program',
 
@@ -463,7 +461,7 @@ const translations: Record<Language, Record<string, string>> = {
 'education.mastercard.feature3': 'Recommendation algorithms',
 'education.mastercard.feature4': 'Predictive analytics',
 
-'education.form.subtitle': 'Submit the form and we will contact you for the next course intake',
+'education.form.subtitle': 'Submit the form and wait for our representative to get in touch with you',
 
 'form.program': 'Choose Program',
 'form.programPlaceholder': 'Select a program',
@@ -479,7 +477,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Business
  
 'business.hero.title': 'AI Solutions for Your Business',
-'business.hero.stats': 'cost reduction|productivity increase',
+'business.hero.stats': 'Reduce costs, increase productivity. We build practical AI systems that boost efficiency',
 'business.hero.cta': 'Get a Free Consultation',
 
 'business.services.audit.title': 'AI Audit & Strategy',
@@ -536,15 +534,8 @@ const translations: Record<Language, Record<string, string>> = {
 'business.industry.education': 'Education',
 'business.industry.other': 'Other',
 
-  
-
-    // Startups
-    // 'startups.hero.title': 'Realize Your AI Idea',
-    // 'startups.hero.subtitle': 'Technical support, funding, and mentorship',
-    // 'startups.hero.cta': 'Submit Your Idea',
-    // STARTUPS HERO
-'startups.hero.title': 'AI Support for Startups',
-'startups.hero.subtitle': 'Build, scale, and accelerate your startup with our full ecosystem of technical, business, and infrastructure support.',
+'startups.hero.title': 'Realize Your AI Idea: From Concept to Commercial Product.',
+'startups.hero.subtitle': 'We help startups with technological development and growth. This includes technical support, investment in internal research and development, and model commercialization.',
 'startups.hero.cta': 'Apply Now',
 
 // OFFERINGS
@@ -587,7 +578,7 @@ const translations: Record<Language, Record<string, string>> = {
 'startups.process.step4.desc': 'Start building with Nebula',
 
 // FORM
-'startups.form.title': 'Submit Your Startup',
+'startups.form.title': 'Submit Your Idea',
 'startups.form.subtitle': 'Tell us more about your idea so we can evaluate your application.',
 'startups.form.startupName': 'Startup Name',
 'startups.form.description': 'Short Description',
@@ -604,12 +595,13 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Careers
      // CAREERS PAGE TRANSLATIONS (EN)
-'careers.hero.title': 'Join the Nebula Team',
-'careers.hero.subtitle': 'Work on future technologies',
+'careers.hero.title': 'Join Our Star Team',
+'careers.hero.subtitle': 'Shape the Future with AI',
 
 'careers.title': 'Careers at Nebula',
-'careers.desc1': 'We believe our people are our greatest asset. We create equal opportunities for individuals of all cultures and backgrounds to engage in meaningful, challenging work.',
-'careers.desc2': 'We learn, act, and grow together — constantly improving through continuous learning, collaboration, and a shared drive to achieve our goals.',
+'careers.desc1': 'Advance knowledge and drive the technological future. It is crucial for us to create an environment where individuals from diverse backgrounds, cultures, and viewpoints receive equal opportunities and fully utilize their skills. We learn, act, and develop together. Our team never stays complacent; we constantly strive for improvement and build a culture focused on continuous growth.',
+'buttons.viewOpenJobs': 'View Open Vacancies',
+
 
 'careers.benefit.real_projects': 'Real AI Projects',
 'careers.benefit.development': 'Professional Growth',

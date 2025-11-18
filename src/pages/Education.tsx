@@ -181,9 +181,9 @@ export default function Education() {
               {t('education.form.title')}
             </h2>
 
-            <p className="text-center text-muted-foreground mb-10">
+            {/* <p className="text-center text-muted-foreground mb-10">
               {t('education.form.subtitle')}
-            </p>
+            </p> */}
 
             {/* FORM */}
             <form onSubmit={handleSubmit} className="space-y-6">

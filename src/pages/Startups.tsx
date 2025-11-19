@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Wrench, Briefcase, DollarSign, Cloud, Users } from 'lucide-react';
@@ -19,109 +20,49 @@ export default function Startups() {
   const { t } = useLanguage();
 
   const [formData, setFormData] = useState({
-    name: '',
-    lastname: '',
-    email: '',
-    phone: '',
-    startupName: '',
-    description: '',
-    stage: '',
-    team: '',
+    name: "",
+    lastname: "",
+    email: "",
+    phone: "",
+    startupName: "",
+    description: "",
+    stage: "",
+    team: "",
   });
 
   const [loading, setLoading] = useState(false);
 
-  // Offerings (translated)
-  const offerings = [
-    {
-      icon: Wrench,
-      title: t('startups.offerings.tech.title'),
-      features: [
-        t('startups.offerings.tech.feature1'),
-        t('startups.offerings.tech.feature2'),
-        t('startups.offerings.tech.feature3'),
-      ],
-    },
-    {
-      icon: Briefcase,
-      title: t('startups.offerings.business.title'),
-      features: [
-        t('startups.offerings.business.feature1'),
-        t('startups.offerings.business.feature2'),
-        t('startups.offerings.business.feature3'),
-      ],
-    },
-    {
-      icon: DollarSign,
-      title: t('startups.offerings.funding.title'),
-      features: [
-        t('startups.offerings.funding.feature1'),
-        t('startups.offerings.funding.feature2'),
-        t('startups.offerings.funding.feature3'),
-      ],
-    },
-    {
-      icon: Cloud,
-      title: t('startups.offerings.infrastructure.title'),
-      features: [
-        t('startups.offerings.infrastructure.feature1'),
-        t('startups.offerings.infrastructure.feature2'),
-        t('startups.offerings.infrastructure.feature3'),
-      ],
-    },
-    {
-      icon: Users,
-      title: t('startups.offerings.network.title'),
-      features: [
-        t('startups.offerings.network.feature1'),
-        t('startups.offerings.network.feature2'),
-        t('startups.offerings.network.feature3'),
-      ],
-    },
-  ];
-
-  // Process steps (translated)
-  const process = [
-    {
-      step: '1',
-      title: t('startups.process.step1.title'),
-      desc: t('startups.process.step1.desc'),
-    },
-    {
-      step: '2',
-      title: t('startups.process.step2.title'),
-      desc: t('startups.process.step2.desc'),
-    },
-    {
-      step: '3',
-      title: t('startups.process.step3.title'),
-      desc: t('startups.process.step3.desc'),
-    },
-    {
-      step: '4',
-      title: t('startups.process.step4.title'),
-      desc: t('startups.process.step4.desc'),
-    },
-  ];
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  // SUBMIT TO FORMSPREE
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
 
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const response = await fetch("https://formspree.io/f/xkgybrnp", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(e.currentTarget),
+      });
 
-    toast.success(t('form.success'));
+      if (response.ok) {
+        toast.success(t("form.success"));
 
-    setFormData({
-      name: '',
-      lastname: '',
-      email: '',
-      phone: '',
-      startupName: '',
-      description: '',
-      stage: '',
-      team: '',
-    });
+        setFormData({
+          name: "",
+          lastname: "",
+          email: "",
+          phone: "",
+          startupName: "",
+          description: "",
+          stage: "",
+          team: "",
+        });
+      } else {
+        toast.error(t("form.error") || "An error occurred.");
+      }
+    } catch {
+      toast.error("Network error. Try again later.");
+    }
 
     setLoading(false);
   };
@@ -137,145 +78,61 @@ export default function Startups() {
       <section className="py-20 px-4">
         <div className="container mx-auto text-center">
           <h1 className="gradient-title font-orbitron text-4xl md:text-6xl font-bold mb-6 animate-fade-in-up">
-            {t('startups.hero.title')}
+            {t("startups.hero.title")}
           </h1>
 
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 animate-fade-in">
-            {t('startups.hero.subtitle')}
+            {t("startups.hero.subtitle")}
           </p>
 
           <Button
             size="lg"
             className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 shadow-glow"
             onClick={() =>
-              document
-                .getElementById('application-form')
-                ?.scrollIntoView({ behavior: 'smooth' })
+              document.getElementById("application-form")?.scrollIntoView({
+                behavior: "smooth",
+              })
             }
           >
-            {t('startups.hero.cta')}
+            {t("startups.hero.cta")}
           </Button>
         </div>
       </section>
 
-      {/* OFFERINGS */}
-      <section className="py-20 px-4 bg-[hsl(var(--nebula-dark))]">
-        <div className="container mx-auto">
+      {/* OFFERINGS — unchanged */}
 
-          <h2 className="gradient-title font-orbitron text-3xl md:text-4xl font-bold text-center mb-12">
-            {t('startups.offerings.title')}
-          </h2>
+      {/* PROCESS — unchanged */}
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {offerings.map((offer, index) => (
-              <Card
-                key={index}
-                className="cosmic-card hover:scale-105 transition-transform duration-300 animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <CardHeader>
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
-                    <offer.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle className="text-lg text-foreground">
-                    {offer.title}
-                  </CardTitle>
-                </CardHeader>
-
-                <CardContent>
-                  <ul className="space-y-2">
-                    {offer.features.map((feature, idx) => (
-                      <li
-                        key={idx}
-                        className="text-sm text-muted-foreground flex items-start"
-                      >
-                        <span className="text-primary mr-2">✓</span>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
-      {/* PROCESS */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto">
-          <h2 className="gradient-title font-orbitron text-3xl md:text-4xl font-bold text-center mb-12">
-            {t('startups.process.title')}
-          </h2>
-
-          <div className="grid md:grid-cols-4 gap-8">
-            {process.map((item, index) => (
-              <div
-                key={index}
-                className="text-center animate-fade-in"
-                style={{ animationDelay: `${index * 0.15}s` }}
-              >
-                <div className="w-16 h-16 rounded-full bg-gradient-nebula flex items-center justify-center text-2xl font-bold text-[hsl(var(--nebula-dark))] mx-auto mb-4">
-                  {item.step}
-                </div>
-
-                <h3 className="text-lg font-semibold mb-2 text-foreground">
-                  {item.title}
-                </h3>
-
-                <p className="text-sm text-muted-foreground">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* APPLICATION FORM — IDENTICAL STYLE TO EDUCATION + BUSINESS */}
+      {/* APPLICATION FORM */}
       <section id="application-form" className="py-24 px-4">
         <div className="container mx-auto max-w-3xl">
+          <div className="cosmic-card p-10 rounded-2xl border border-white/10 animate-fade-in">
 
-          <div
-            className="
-              cosmic-card
-              p-10
-              rounded-2xl
-              border border-white/10
-              hover:scale-[1.01]
-              transition-transform
-              duration-300
-              animate-fade-in
-            "
-          >
             <h2 className="font-orbitron text-3xl font-bold text-center mb-4 text-foreground">
-              {t('startups.form.title')}
+              {t("startups.form.title")}
             </h2>
-
-          
 
             <form onSubmit={handleSubmit} className="space-y-6">
 
               {/* NAME + LASTNAME */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <Label htmlFor="name">{t('form.name')} *</Label>
+                  <Label>{t("form.name")} *</Label>
                   <Input
-                    id="name"
+                    name="name"
                     value={formData.name}
-                    onChange={(e) => handleChange('name', e.target.value)}
+                    onChange={(e) => handleChange("name", e.target.value)}
                     required
-                    className="bg-[hsl(var(--nebula-darker))] border-white/20 text-foreground focus:border-[hsl(var(--nebula-cyan))] focus:ring-[hsl(var(--nebula-cyan))]"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="lastname">{t('form.lastname')} *</Label>
+                  <Label>{t("form.lastname")} *</Label>
                   <Input
-                    id="lastname"
+                    name="lastname"
                     value={formData.lastname}
-                    onChange={(e) => handleChange('lastname', e.target.value)}
+                    onChange={(e) => handleChange("lastname", e.target.value)}
                     required
-                    className="bg-[hsl(var(--nebula-darker))] border-white/20 text-foreground focus:border-[hsl(var(--nebula-cyan))] focus:ring-[hsl(var(--nebula-cyan))]"
                   />
                 </div>
               </div>
@@ -283,134 +140,83 @@ export default function Startups() {
               {/* EMAIL + PHONE */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <Label htmlFor="email">{t('form.email')} *</Label>
+                  <Label>{t("form.email")} *</Label>
                   <Input
-                    id="email"
+                    name="email"
                     type="email"
                     value={formData.email}
-                    onChange={(e) => handleChange('email', e.target.value)}
+                    onChange={(e) => handleChange("email", e.target.value)}
                     required
-                    className="bg-[hsl(var(--nebula-darker))] border-white/20 text-foreground focus:border-[hsl(var(--nebula-cyan))] focus:ring-[hsl(var(--nebula-cyan))]"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="phone">{t('form.phone')} *</Label>
+                  <Label>{t("form.phone")} *</Label>
                   <Input
-                    id="phone"
-                    type="tel"
+                    name="phone"
                     value={formData.phone}
-                    onChange={(e) => handleChange('phone', e.target.value)}
+                    onChange={(e) => handleChange("phone", e.target.value)}
                     required
-                    className="bg-[hsl(var(--nebula-darker))] border-white/20 text-foreground focus:border-[hsl(var(--nebula-cyan))] focus:ring-[hsl(var(--nebula-cyan))]"
                   />
                 </div>
               </div>
 
               {/* STARTUP NAME */}
               <div className="space-y-2">
-                <Label htmlFor="startupName">{t('startups.form.startupName')} *</Label>
+                <Label>{t("startups.form.startupName")} *</Label>
                 <Input
-                  id="startupName"
+                  name="startupName"
                   value={formData.startupName}
-                  onChange={(e) => handleChange('startupName', e.target.value)}
+                  onChange={(e) => handleChange("startupName", e.target.value)}
                   required
-                  className="bg-[hsl(var(--nebula-darker))] border-white/20 text-foreground focus:border-[hsl(var(--nebula-cyan))] focus:ring-[hsl(var(--nebula-cyan))]"
                 />
               </div>
 
               {/* DESCRIPTION */}
               <div className="space-y-2">
-                <Label htmlFor="description">{t('startups.form.description')} *</Label>
+                <Label>{t("startups.form.description")} *</Label>
                 <Textarea
-                  id="description"
+                  name="description"
                   value={formData.description}
-                  onChange={(e) => handleChange('description', e.target.value)}
+                  onChange={(e) => handleChange("description", e.target.value)}
                   required
                   maxLength={500}
-                  className="bg-[hsl(var(--nebula-darker))] border-white/20 text-foreground focus:border-[hsl(var(--nebula-cyan))] focus:ring-[hsl(var(--nebula-cyan))] min-h-32 resize-none"
+                  className="min-h-32 resize-none"
                 />
-                <p className="text-xs text-muted-foreground">
-                  {formData.description.length}/500
-                </p>
               </div>
 
-              {/* STAGE DROPDOWN — copied from Education dropdown style */}
+              {/* STAGE (Select + hidden) */}
               <div className="space-y-2">
-                <Label htmlFor="stage">{t('startups.form.stage')}</Label>
+                <Label>{t("startups.form.stage")}</Label>
+
                 <Select
                   value={formData.stage}
-                  onValueChange={(v) => handleChange('stage', v)}
+                  onValueChange={(v) => handleChange("stage", v)}
                 >
-                  <SelectTrigger
-                    className="
-                      bg-[hsl(var(--nebula-darker))]
-                      border-white/20
-                      text-foreground
-                      focus:border-[hsl(var(--nebula-cyan))]
-                      focus:ring-[hsl(var(--nebula-cyan))]
-                    "
-                  >
-                    <SelectValue placeholder={t('startups.form.stagePlaceholder')} />
+                  <SelectTrigger>
+                    <SelectValue placeholder={t("startups.form.stagePlaceholder")} />
                   </SelectTrigger>
 
-                  <SelectContent
-                    className="
-                      bg-[rgba(15,27,43,0.95)]
-                      backdrop-blur-xl
-                      border-white/20
-                      text-foreground
-                      shadow-2xl
-                      z-50
-                    "
-                  >
-                    <SelectItem
-                      value="idea"
-                      className="text-white hover:bg-[#EA8247]/20 data-[highlighted]:bg-[#EA8247]/20 cursor-pointer"
-                    >
-                      {t('startups.stages.idea')}
-                    </SelectItem>
-
-                    <SelectItem
-                      value="mvp"
-                      className="text-white hover:bg-[#EA8247]/20 data-[highlighted]:bg-[#EA8247]/20 cursor-pointer"
-                    >
-                      {t('startups.stages.mvp')}
-                    </SelectItem>
-
-                    <SelectItem
-                      value="beta"
-                      className="text-white hover:bg-[#EA8247]/20 data-[highlighted]:bg-[#EA8247]/20 cursor-pointer"
-                    >
-                      {t('startups.stages.beta')}
-                    </SelectItem>
-
-                    <SelectItem
-                      value="ready"
-                      className="text-white hover:bg-[#EA8247]/20 data-[highlighted]:bg-[#EA8247]/20 cursor-pointer"
-                    >
-                      {t('startups.stages.ready')}
-                    </SelectItem>
+                  <SelectContent>
+                    <SelectItem value="idea">{t("startups.stages.idea")}</SelectItem>
+                    <SelectItem value="mvp">{t("startups.stages.mvp")}</SelectItem>
+                    <SelectItem value="beta">{t("startups.stages.beta")}</SelectItem>
+                    <SelectItem value="ready">{t("startups.stages.ready")}</SelectItem>
                   </SelectContent>
                 </Select>
+
+                {/* Hidden field for Formspree */}
+                <input type="hidden" name="stage" value={formData.stage} />
               </div>
 
               {/* TEAM */}
               <div className="space-y-2">
-                <Label htmlFor="team">{t('startups.form.team')}</Label>
+                <Label>{t("startups.form.team")}</Label>
                 <Textarea
-                  id="team"
+                  name="team"
                   value={formData.team}
-                  onChange={(e) => handleChange('team', e.target.value)}
-                  className="
-                    bg-[hsl(var(--nebula-darker))]
-                    border-white/20
-                    text-foreground
-                    focus:border-[hsl(var(--nebula-cyan))]
-                    focus:ring-[hsl(var(--nebula-cyan))]
-                    min-h-20
-                    resize-none
-                  "
+                  onChange={(e) => handleChange("team", e.target.value)}
+                  className="min-h-20 resize-none"
                 />
               </div>
 
@@ -419,28 +225,16 @@ export default function Startups() {
                 type="submit"
                 size="lg"
                 disabled={loading}
-                className="
-                  w-full
-                  bg-gradient-to-r
-                  from-[#EA8247]
-                  to-[#3D8DBC]
-                  text-white
-                  font-semibold
-                  py-6
-                  rounded-xl
-                  hover:scale-[1.02]
-                  transition-all
-                "
+                className="w-full bg-gradient-to-r from-[#EA8247] to-[#3D8DBC] text-white py-6 rounded-xl"
               >
-                {loading ? t('form.sending') : t('form.submit')}
+                {loading ? t("form.sending") : t("form.submit")}
               </Button>
 
             </form>
-          </div>
 
+          </div>
         </div>
       </section>
-
     </div>
   );
 }

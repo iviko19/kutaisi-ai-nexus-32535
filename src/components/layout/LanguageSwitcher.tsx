@@ -11,10 +11,10 @@ import { Globe } from 'lucide-react';
 export const LanguageSwitcher = () => {
   const { language, setLanguage } = useLanguage();
 
+ 
   const languages = [
     { code: 'ka', label: '🇬🇪 ქართული', short: 'ქარ' },
     { code: 'en', label: '🇬🇧 English', short: 'ENG' },
-    { code: 'ru', label: '🇷🇺 Русский', short: 'РУС' },
   ];
 
   const currentLang = languages.find((lang) => lang.code === language);
@@ -22,21 +22,54 @@ export const LanguageSwitcher = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="sm" className="bg-[hsl(var(--nebula-cyan)/0.1)] border-[hsl(var(--nebula-cyan)/0.3)] hover:bg-[hsl(var(--nebula-cyan)/0.2)]">
-          <Globe className="mr-2 h-4 w-4" />
+
+        <Button
+          variant="ghost"
+          size="sm"
+          className="
+            bg-transparent
+            text-white
+            border border-white/40
+            hover:bg-white/10
+            px-4
+            py-2
+            rounded-md
+            flex items-center gap-2
+          "
+        >
+          <Globe className="h-4 w-4 text-white" />
           <span className="hidden sm:inline">{currentLang?.short}</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="bg-[hsl(var(--nebula-dark))] border-[hsl(var(--nebula-cyan)/0.3)] z-[100]">
+
+     
+      <DropdownMenuContent
+        align="end"
+        className="
+          bg-[#0B1420]
+          border border-white/30
+          text-white
+          rounded-md
+          shadow-xl
+          w-36
+          z-[200]
+        "
+      >
         {languages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
-            onClick={() => setLanguage(lang.code as 'ka' | 'en' | 'ru')}
-            className={`cursor-pointer ${
-              language === lang.code
-                ? 'bg-[hsl(var(--nebula-cyan)/0.2)] text-[hsl(var(--nebula-cyan))]'
-                : 'hover:bg-[hsl(var(--nebula-cyan)/0.1)]'
-            }`}
+            onClick={() => setLanguage(lang.code as 'ka' | 'en')}
+            className={`
+              cursor-pointer 
+              px-3 py-2 
+              text-sm 
+              rounded-md
+              ${
+                language === lang.code
+                  ? "bg-[#A45A2A] text-white"
+                  : "hover:bg-[#A45A2A]/60"
+              }
+            `}
           >
             {lang.label}
           </DropdownMenuItem>

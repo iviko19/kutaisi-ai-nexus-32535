@@ -154,7 +154,7 @@ export default function Contact() {
                   <h3 className="text-lg font-semibold text-foreground">
                     {t('contact.email')}
                   </h3>
-                  <a href="mailto:info@nebulahub.ai" className="text-muted-foreground">
+                  <a href="mailto:Contact@nebulahub.ai" className="text-muted-foreground">
                     info@nebulahub.ai
                   </a>
                 </div>
@@ -187,13 +187,13 @@ export default function Contact() {
                 </h3>
                 <div className="flex space-x-4">
                   <a
-                    href="https://www.facebook.com/p/Nebula-AI-Hub-61573891437689/"
+                    href="https://www.facebook.com/profile.php?id=61573891437689"
                     className="w-10 h-10 rounded-lg bg-[hsl(215_55%_65%/.12)] flex items-center justify-center"
                   >
                     <Facebook className="h-5 w-5 text-[hsl(215_55%_65%)]" />
                   </a>
                   <a
-                    href="https://www.linkedin.com/company/nebula-ai-hub/posts"
+                    href="https://www.linkedin.com/company/nebula-ai-hub/posts/?feedView=all"
                     className="w-10 h-10 rounded-lg bg-[hsl(215_55%_65%/.12)] flex items-center justify-center"
                   >
                     <Linkedin className="h-5 w-5 text-[hsl(215_55%_65%)]" />

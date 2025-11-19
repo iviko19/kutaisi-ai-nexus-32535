@@ -1,5 +1,4 @@
 
-
 import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Search, Settings, Box, Factory, Eye, Database } from 'lucide-react';
@@ -29,9 +28,60 @@ export default function Business() {
     description: '',
     budget: '',
   });
+
   const [loading, setLoading] = useState(false);
 
-  // SERVICES – now fully translatable
+  // INDUSTRY OPTIONS
+  const industryOptions = [
+    { value: 'energy', label: t('business.industry.energy') },
+    { value: 'finance', label: t('business.industry.finance') },
+    { value: 'logistics', label: t('business.industry.logistics') },
+    { value: 'aviation', label: t('business.industry.aviation') },
+    { value: 'retail', label: t('business.industry.retail') },
+    { value: 'healthcare', label: t('business.industry.healthcare') },
+    { value: 'education', label: t('business.industry.education') },
+    { value: 'other', label: t('business.industry.other') },
+  ];
+
+  // SUBMISSION HANDLER → Formspree
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const response = await fetch("https://formspree.io/f/xyzojeaj", {
+        method: "POST",
+        headers: { "Accept": "application/json" },
+        body: new FormData(e.currentTarget),
+      });
+
+      if (response.ok) {
+        toast.success(t("form.success"));
+
+        setFormData({
+          company: '',
+          contact: '',
+          email: '',
+          phone: '',
+          industry: '',
+          description: '',
+          budget: '',
+        });
+      } else {
+        toast.error(t("form.error") || "Submission failed.");
+      }
+    } catch {
+      toast.error("Network error. Try again later.");
+    }
+
+    setLoading(false);
+  };
+
+  const handleChange = (field: string, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
+
+  // SERVICES
   const services = [
     {
       icon: Search,
@@ -95,127 +145,72 @@ export default function Business() {
     },
   ];
 
-  // INDUSTRY OPTIONS – translatable like educationLevels
-  const industryOptions = [
-    { value: 'energy', label: t('business.industry.energy') },
-    { value: 'finance', label: t('business.industry.finance') },
-    { value: 'logistics', label: t('business.industry.logistics') },
-    { value: 'aviation', label: t('business.industry.aviation') },
-    { value: 'retail', label: t('business.industry.retail') },
-    { value: 'healthcare', label: t('business.industry.healthcare') },
-    { value: 'education', label: t('business.industry.education') },
-    { value: 'other', label: t('business.industry.other') },
-  ];
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    console.log('Business Form Submission:', formData);
-    toast.success(t('form.success'));
-
-    setFormData({
-      company: '',
-      contact: '',
-      email: '',
-      phone: '',
-      industry: '',
-      description: '',
-      budget: '',
-    });
-    setLoading(false);
-  };
-
-  const handleChange = (field: string, value: string) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
-  };
-
-  // split hero stats like you already had: "text1|text2"
-  const [stat1, stat2] = t('business.hero.stats').split('|');
-
   return (
     <div className="min-h-screen bg-[hsl(var(--nebula-darker))] pt-20">
-      {/* Hero */}
+
+      {/* HERO */}
       <section className="py-20 px-4">
         <div className="container mx-auto text-center">
+
           <h1 className="gradient-title font-orbitron text-4xl md:text-6xl font-bold mb-6 animate-fade-in-up">
             {t('business.hero.title')}
           </h1>
 
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 animate-fade-in">
-           {t('business.hero.stats')}
+            {t('business.hero.stats')}
           </p>
 
           <Button
             size="lg"
             className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 shadow-glow"
             onClick={() =>
-              document
-                .getElementById('consultation-form')
-                ?.scrollIntoView({ behavior: 'smooth' })
+              document.getElementById('consultation-form')?.scrollIntoView({ behavior: 'smooth' })
             }
           >
             {t('business.hero.cta')}
           </Button>
+
         </div>
       </section>
 
-      {/* Services Grid – can keep this look, just text now translated */}
+      {/* SERVICES */}
       <section className="py-20 px-4 bg-[hsl(var(--nebula-dark))]">
-        <div className="container mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, index) => (
-              <Card
-                key={index}
-                className="cosmic-card hover:scale-105 transition-transform duration-300 animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <CardHeader>
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
-                    <service.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle className="text-lg text-foreground">
-                    {service.title}
-                  </CardTitle>
-                </CardHeader>
+        <div className="container mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map((service, index) => (
+            <Card
+              key={index}
+              className="cosmic-card hover:scale-105 transition-transform duration-300 animate-fade-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
+                  <service.icon className="h-6 w-6 text-primary" />
+                </div>
+                <CardTitle className="text-lg text-foreground">{service.title}</CardTitle>
+              </CardHeader>
 
-                <CardContent>
-                  <ul className="space-y-2">
-                    {service.features.map((feature, idx) => (
-                      <li
-                        key={idx}
-                        className="text-sm text-muted-foreground flex items-start"
-                      >
-                        <span className="text-primary mr-2">•</span>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+              <CardContent>
+                <ul className="space-y-2">
+                  {service.features.map((feature, idx) => (
+                    <li key={idx} className="text-sm text-muted-foreground flex items-start">
+                      <span className="text-primary mr-2">•</span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+
+            </Card>
+          ))}
         </div>
       </section>
 
-      {/* Consultation Form – styled like Education application form */}
+      {/* CONSULTATION FORM */}
       <section id="consultation-form" className="py-24 px-4">
         <div className="container mx-auto max-w-3xl">
-          <div
-            className="
-              cosmic-card
-              p-10
-              rounded-2xl
-              border border-white/10
-              hover:scale-[1.01]
-              transition-transform
-              duration-300
-              animate-fade-in
-            "
-          >
-            {/* Title */}
+
+          <div className="cosmic-card p-10 rounded-2xl border border-white/10 animate-fade-in">
+
             <h2 className="font-orbitron text-3xl font-bold text-center mb-4 text-foreground">
               {t('business.form.title')}
             </h2>
@@ -224,202 +219,112 @@ export default function Business() {
               {t('business.form.subtitle')}
             </p>
 
-            {/* FORM */}
             <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Company Name */}
+
+              {/* COMPANY */}
               <div className="space-y-2">
-                <Label htmlFor="company">{t('business.form.company')} *</Label>
+                <Label>{t('business.form.company')} *</Label>
                 <Input
-                  id="company"
-                  value={formData.company}
-                  onChange={(e) => handleChange('company', e.target.value)}
+                  name="company"
                   required
-                  className="
-                    bg-[hsl(var(--nebula-darker))]
-                    border-white/20
-                    text-foreground
-                    focus:border-[hsl(var(--nebula-cyan))]
-                    focus:ring-1
-                    focus:ring-[hsl(var(--nebula-cyan))]
-                  "
+                  value={formData.company}
+                  onChange={(e) => handleChange("company", e.target.value)}
                 />
               </div>
 
-              {/* Contact + Email */}
+              {/* CONTACT + EMAIL */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <Label htmlFor="contact">{t('business.form.contact')} *</Label>
+                  <Label>{t('business.form.contact')} *</Label>
                   <Input
-                    id="contact"
-                    value={formData.contact}
-                    onChange={(e) => handleChange('contact', e.target.value)}
+                    name="contact"
                     required
-                    className="
-                      bg-[hsl(var(--nebula-darker))]
-                      border-white/20
-                      text-foreground
-                      focus:border-[hsl(var(--nebula-cyan))]
-                      focus:ring-1
-                      focus:ring-[hsl(var(--nebula-cyan))]
-                    "
+                    value={formData.contact}
+                    onChange={(e) => handleChange("contact", e.target.value)}
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="email">{t('form.email')} *</Label>
+                  <Label>{t('form.email')} *</Label>
                   <Input
-                    id="email"
+                    name="email"
                     type="email"
-                    value={formData.email}
-                    onChange={(e) => handleChange('email', e.target.value)}
                     required
-                    className="
-                      bg-[hsl(var(--nebula-darker))]
-                      border-white/20
-                      text-foreground
-                      focus:border-[hsl(var(--nebula-cyan))]
-                      focus:ring-1
-                      focus:ring-[hsl(var(--nebula-cyan))]
-                    "
+                    value={formData.email}
+                    onChange={(e) => handleChange("email", e.target.value)}
                   />
                 </div>
               </div>
 
-              {/* Phone + Industry */}
+              {/* PHONE + INDUSTRY */}
               <div className="grid md:grid-cols-2 gap-6">
+
                 <div className="space-y-2">
-                  <Label htmlFor="phone">{t('form.phone')} *</Label>
+                  <Label>{t('form.phone')} *</Label>
                   <Input
-                    id="phone"
-                    type="tel"
-                    value={formData.phone}
-                    onChange={(e) => handleChange('phone', e.target.value)}
+                    name="phone"
                     required
-                    className="
-                      bg-[hsl(var(--nebula-darker))]
-                      border-white/20
-                      text-foreground
-                      focus:border-[hsl(var(--nebula-cyan))]
-                      focus:ring-1
-                      focus:ring-[hsl(var(--nebula-cyan))]
-                    "
+                    value={formData.phone}
+                    onChange={(e) => handleChange("phone", e.target.value)}
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="industry">{t('business.form.industry')}</Label>
+                  <Label>{t('business.form.industry')}</Label>
                   <Select
                     value={formData.industry}
-                    onValueChange={(value) => handleChange('industry', value)}
+                    onValueChange={(v) => handleChange("industry", v)}
                   >
-                    <SelectTrigger
-                      className="
-                        bg-[hsl(var(--nebula-darker))]
-                        border-white/20
-                        text-foreground
-                        focus:border-[hsl(var(--nebula-cyan))]
-                        focus:ring-1
-                        focus:ring-[hsl(var(--nebula-cyan))]
-                      "
-                    >
-                      <SelectValue
-                        placeholder={t('business.form.industryPlaceholder')}
-                      />
+                    <SelectTrigger>
+                      <SelectValue placeholder={t('business.form.industryPlaceholder')} />
                     </SelectTrigger>
-                    {/* DROPDOWN STYLE COPIED FROM EDUCATION FORM */}
-                    <SelectContent
-                      className="
-                        bg-[rgba(15,27,43,0.95)]
-                        backdrop-blur-xl
-                        border-white/20
-                        text-foreground
-                        shadow-2xl
-                        z-50
-                      "
-                    >
+                    <SelectContent>
                       {industryOptions.map(({ value, label }) => (
-                        <SelectItem
-                          key={value}
-                          value={value}
-                          className="
-                            text-white
-                            hover:bg-[#EA8247]/20
-                            focus:bg-[#EA8247]/20
-                            data-[highlighted]:bg-[#EA8247]/20
-                            cursor-pointer
-                          "
-                        >
+                        <SelectItem key={value} value={value}>
                           {label}
                         </SelectItem>
                       ))}
                     </SelectContent>
                   </Select>
+
+                  {/* Hidden input for Formspree */}
+                  <input type="hidden" name="industry" value={formData.industry} />
                 </div>
+
               </div>
 
-              {/* Project Description */}
+              {/* DESCRIPTION */}
               <div className="space-y-2">
-                <Label htmlFor="description">
-                  {t('business.form.description')} *
-                </Label>
+                <Label>{t('business.form.description')} *</Label>
                 <Textarea
-                  id="description"
-                  value={formData.description}
-                  onChange={(e) => handleChange('description', e.target.value)}
+                  name="description"
                   required
-                  className="
-                    bg-[hsl(var(--nebula-darker))]
-                    border-white/20
-                    text-foreground
-                    focus:border-[hsl(var(--nebula-cyan))]
-                    focus:ring-1
-                    focus:ring-[hsl(var(--nebula-cyan))]
-                    min-h-32
-                    resize-none
-                  "
+                  value={formData.description}
+                  onChange={(e) => handleChange("description", e.target.value)}
                 />
               </div>
 
-              {/* Budget (optional, but in your state) */}
+              {/* BUDGET */}
               <div className="space-y-2">
-                <Label htmlFor="budget">{t('business.form.budget')}</Label>
+                <Label>{t('business.form.budget')}</Label>
                 <Input
-                  id="budget"
+                  name="budget"
                   value={formData.budget}
-                  onChange={(e) => handleChange('budget', e.target.value)}
-                  className="
-                    bg-[hsl(var(--nebula-darker))]
-                    border-white/20
-                    text-foreground
-                    focus:border-[hsl(var(--nebula-cyan))]
-                    focus:ring-1
-                    focus:ring-[hsl(var(--nebula-cyan))]
-                  "
+                  onChange={(e) => handleChange("budget", e.target.value)}
                 />
               </div>
 
-              {/* Submit Button – same as Education form */}
-              <Button
-                type="submit"
-                size="lg"
-                className="
-                  w-full
-                  bg-gradient-to-r from-[#EA8247] to-[#3D8DBC]
-                  hover:scale-[1.02]
-                  transition-all
-                  text-white
-                  font-semibold
-                  py-6
-                  rounded-xl
-                "
-                disabled={loading}
-              >
-                {loading ? t('form.sending') : t('form.submit')}
+              {/* SUBMIT */}
+              <Button type="submit" disabled={loading}>
+                {loading ? t("form.sending") : t("form.submit")}
               </Button>
+
             </form>
+
           </div>
         </div>
       </section>
+
     </div>
   );
 }

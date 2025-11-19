@@ -69,70 +69,6 @@ const Solutions = () => {
       </section>
 
       {/* Products Grid */}
-      {/* <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto space-y-8">
-            {products.map((product, index) => {
-              const Icon = product.icon;
-              return (
-                <Card
-                  key={index}
-                  className="group relative overflow-hidden border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-glow-accent animate-fade-in"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <div className={`absolute inset-0 bg-gradient-to-br ${product.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-                  
-                  <CardHeader className="relative z-10">
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="flex items-center gap-4">
-                        <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                          <Icon className="w-7 h-7 text-primary" />
-                        </div>
-                        <div>
-                          <CardTitle className="text-2xl font-orbitron group-hover:text-primary transition-colors">
-                            {product.title}
-                          </CardTitle>
-                          {!product.available && (
-                            <Badge variant="secondary" className="mt-2">
-                              {t('solutions.comingsoon')}
-                            </Badge>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  </CardHeader>
-
-                   <CardContent className="relative z-10 space-y-6">
-                    <CardDescription className="text-base leading-relaxed">
-                      {product.description}
-                    </CardDescription>
-
-                    <Button
-                      asChild={product.available}
-                      disabled={!product.available}
-                      className="group/btn bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 shadow-glow-accent"
-                    >
-                      {product.available ? (
-                        <a href={product.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2">
-                          {t('solutions.explore')}
-                          <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                        </a>
-                      ) : (
-                        <span className="inline-flex items-center gap-2">
-                          {t('solutions.comingsoon')}
-                        </span>
-                      )}
-                    </Button>
-                  </CardContent> 
-                 
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </section> */}
-
-      {/* Products Grid */}
 <section className="py-16 md:py-24">
   <div className="container mx-auto px-4">
     <div className="max-w-5xl mx-auto space-y-8">
@@ -162,11 +98,6 @@ const Solutions = () => {
                       {product.title}
                     </CardTitle>
 
-                    {!product.available && (
-                      <Badge variant="secondary" className="mt-2">
-                        {t('solutions.comingsoon')}
-                      </Badge>
-                    )}
                   </div>
                 </div>
               </div>
@@ -177,27 +108,22 @@ const Solutions = () => {
                 {product.description}
               </CardDescription>
 
-              <Button
-                asChild={product.available}
-                disabled={!product.available}
-                className="group/btn cosmic-button w-fit"
-              >
-                {product.available ? (
-                  <a
-                    href={product.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2"
-                  >
-                    {t('solutions.explore')}
-                    <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                  </a>
-                ) : (
-                  <span className="inline-flex items-center gap-2">
-                    {t('solutions.comingsoon')}
-                  </span>
-                )}
-              </Button>
+<Button
+  asChild
+  className="group/btn cosmic-button w-fit"
+>
+  <a
+    href={product.link}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2"
+  >
+    {t('solutions.explore')}
+    <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+  </a>
+</Button>
+
+
             </CardContent>
           </Card>
         );

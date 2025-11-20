@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
@@ -194,7 +195,19 @@ All colors MUST be HSL.
 
 .gradient-title {
   @apply bg-gradient-to-r from-primary via-accent to-primary 
-         bg-clip-text text-transparent;
+         bg-clip-text text-transparent leading-tight break-words whitespace-normal;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.text-gradient {
+  @apply leading-tight break-words whitespace-normal;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+h1, h2, h3 {
+  @apply leading-tight break-words whitespace-normal;
 }
 
 

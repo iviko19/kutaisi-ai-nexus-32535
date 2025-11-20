@@ -50,59 +50,67 @@ export default function Home() {
   return (
     <div className="min-h-screen relative">
 
+
 {/* Hero Section */}
-<section className="relative pt-40 pb-20 md:pt-48 md:pb-24 overflow-hidden">
+<section className="relative pt-40 pb-20 md:pt-48 md:pb-24 overflow-visible">
   <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
 
   <div className="container mx-auto px-4 relative z-10">
     <div className="max-w-5xl mx-auto text-center animate-fade-in">
 
-      {/* Headline */}
-      <h1 className="font-orbitron  md:text-6xl font-bold 
-                     bg-gradient-to-r from-primary via-accent to-primary 
-                     bg-clip-text text-transparent animate-gradient mt-8 mb-10">
-        {t('home.hero.title')}
-      </h1>
+     
+           <h1
+              className=" font-inter text-6xl font-bold leading-[1.28]  whitespace-normal break-words overflow-visible text-transparent
+                        bg-clip-text bg-gradient-to-r from-[#EA8247] via-[#3D8DBC] to-[#EA8247]  mt-8 mb-10 "
+            > {t('home.hero.title')}
+          </h1>
 
-      {/* Subtitle with BIG spacing below */}
-      <p className=" md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-20">
+
+
+    
+      <p className="md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-20">
         {t('home.hero.subtitle')}
       </p>
 
-     {/*  Buttons */}
-<div className="flex flex-col sm:flex-row items-center justify-center gap-8">
+      {/* Buttons */}
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
 
-  {/* Gradient Button */}
-  <a
-    href="#"
-    className="px-12 py-6 rounded-xl text-xl font-semibold text-white
-               bg-gradient-to-r from-[#EA8247] to-[#3D8DBC]
-               shadow-xl hover:shadow-2xl hover:-translate-y-1
-               transition-all duration-300 flex items-center gap-2"
-  >
-    {t("buttons.startLearning")} →
-  </a>
-
-  {/* Outline Button */}
-  <a
-    href="#"
-    className="px-12 py-6 rounded-xl text-xl font-semibold text-[#EA8247]
-               border-2 border-[#EA8247]
-               hover:bg-[#EA8247] hover:text-white 
-               hover:shadow-xl hover:-translate-y-1
-               transition-all duration-300"
-  >
-    {t("buttons.businessSolutions")}
-  </a>
-
-</div>
+     
+        <a
+          href="#"
+          className="
+            px-12 py-6 rounded-xl text-xl font-semibold text-white
+            bg-gradient-to-r from-[#EA8247] to-[#3D8DBC]
+            shadow-xl hover:shadow-2xl hover:-translate-y-1
+            transition-all duration-300 flex items-center gap-2
+          "
+        >
+          {t('buttons.startLearning')} →
+        </a>
 
 
+        <a
+          href="#"
+          className="
+            px-12 py-6 rounded-xl text-xl font-semibold text-[#EA8247]
+            border-2 border-[#EA8247]
+            hover:bg-[#EA8247] hover:text-white 
+            hover:shadow-xl hover:-translate-y-1
+            transition-all duration-300
+          "
+        >
+          {t('buttons.businessSolutions')}
+        </a>
+
+      </div>
 
     </div>
   </div>
 </section>
-      {/* SERVICES SECTION – COSMIC STYLE */}
+
+
+
+      {/* SERVICES SECTION  */}
       <section className="py-24 px-4">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
@@ -154,7 +162,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* STATS SECTION – COSMIC STYLE */}
+      {/* STATS SECTION */}
     
       <section className="py-16 px-4 ">
   <div className="container mx-auto">
@@ -197,7 +205,7 @@ export default function Home() {
 <section className="py-20 px-4">
   <div className="container mx-auto">
 
-    <h2 className="gradient-title font-orbitron text-3xl md:text-4xl font-bold text-center mb-12">
+    <h2 className="gradient-title font-inter text-3xl md:text-4xl font-bold leading-normal overflow-visible break-words whitespace-normal text-center mb-12">
       {t('home.partners.title')}
     </h2>
 
@@ -235,7 +243,7 @@ export default function Home() {
 <section className="py-24 px-4">
   <div className="container mx-auto text-center">
 
-    <h2 className="gradient-title font-orbitron text-3xl md:text-5xl font-bold mb-10">
+    <h2 className="gradient-title font-inter text-4xl  font-bold leading-normal overflow-visible break-words whitespace-normal mb-10">
       {t('home.cta.title')}
     </h2>
 
@@ -252,7 +260,7 @@ export default function Home() {
         {t('home.cta.button1')} →
       </Link>
 
-      {/* Smaller Outline Button */}
+      {/* Button */}
       <Link
         to="/education"
         className="px-8 py-4 rounded-lg text-lg font-semibold text-[#EA8247]

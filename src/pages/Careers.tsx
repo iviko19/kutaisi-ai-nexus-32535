@@ -1,5 +1,4 @@
 
-
 import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Briefcase, Target, Globe, Users, BookOpen } from 'lucide-react';
@@ -83,9 +82,9 @@ export default function Careers() {
     <div className="min-h-screen bg-[hsl(var(--nebula-darker))] pt-20">
 
       {/* HERO */}
-      <section className="py-20 px-4 text-center">
+      <section className="py-20  mt-20 px-4 text-center">
         <div className="container mx-auto">
-          <h1 className="gradient-title text-4xl md:text-6xl font-orbitron font-bold mb-6">
+          <h1 className="gradient-title text-5xl font-inter font-bold leading-normal overflow-visible break-words whitespace-normal max-w-4xl mx-auto mb-6">
             {t("careers.hero.title")}
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -123,7 +122,7 @@ export default function Careers() {
 
           <div className="cosmic-card p-10 rounded-2xl border border-white/10">
 
-            <h2 className="font-orbitron text-3xl font-bold text-center mb-4 text-foreground">
+            <h2 className="font-inter text-3xl font-bold leading-normal overflow-visible break-words whitespace-normal text-center mb-4 text-foreground">
               {t("careers.form.title")}
             </h2>
 
@@ -224,7 +223,6 @@ export default function Careers() {
                 />
               </div>
 
-              {/* Resume Upload — Not supported by Formspree Free */}
               <div>
                 <Label>{t("careers.form.resume")} *</Label>
 
@@ -237,10 +235,10 @@ export default function Careers() {
                 />
               </div>
 
-              {/* Hidden "resume uploaded" flag */}
+             
               <input type="hidden" name="resumeUploaded" value={formData.resumeUploaded} />
 
-              {/* Submit */}
+             
               <Button
                 type="submit"
                 disabled={loading}

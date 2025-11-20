@@ -52,13 +52,13 @@ const Solutions = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-16 md:pt-20">
+     <div className="min-h-screen  pt-16 md:pt-20">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 overflow-hidden">
+      <section className="relative  py-20 md:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6 animate-fade-in">
-            <h1 className="font-orbitron text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient">
+            <h1 className="font-inter text-5xl  font-bold leading-normal overflow-visible bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient">
               {t('solutions.hero.title')}
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -94,7 +94,7 @@ const Solutions = () => {
                   </div>
 
                   <div>
-                    <CardTitle className="text-2xl font-orbitron text-foreground group-hover:text-primary transition-colors">
+                    <CardTitle className="text-2xl font-inter leading-normal overflow-visible break-words whitespace-normal text-foreground group-hover:text-primary transition-colors">
                       {product.title}
                     </CardTitle>
 
@@ -132,7 +132,8 @@ const Solutions = () => {
   </div>
 </section>
 
-    </div>
+   </div>  
+    
   );
 };
 

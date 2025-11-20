@@ -32,7 +32,7 @@ export default function Startups() {
 
   const [loading, setLoading] = useState(false);
 
-  // SUBMIT TO FORMSPREE
+ 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
@@ -75,9 +75,9 @@ export default function Startups() {
     <div className="min-h-screen bg-[hsl(var(--nebula-darker))] pt-20">
 
       {/* HERO */}
-      <section className="py-20 px-4">
+      <section className="py-20 mt-20 px-4">
         <div className="container mx-auto text-center">
-          <h1 className="gradient-title font-orbitron text-4xl md:text-6xl font-bold mb-6 animate-fade-in-up">
+          <h1 className="gradient-title font-inter text-5xl  font-bold leading-normal overflow-visible  whitespace-normal max-w-4xl mx-auto mb-6 animate-fade-in-up">
             {t("startups.hero.title")}
           </h1>
 
@@ -99,16 +99,14 @@ export default function Startups() {
         </div>
       </section>
 
-      {/* OFFERINGS — unchanged */}
-
-      {/* PROCESS — unchanged */}
+    
 
       {/* APPLICATION FORM */}
       <section id="application-form" className="py-24 px-4">
         <div className="container mx-auto max-w-3xl">
           <div className="cosmic-card p-10 rounded-2xl border border-white/10 animate-fade-in">
 
-            <h2 className="font-orbitron text-3xl font-bold text-center mb-4 text-foreground">
+            <h2 className="font-inter text-3xl font-bold leading-normal overflow-visible break-words whitespace-normal text-center mb-4 text-foreground">
               {t("startups.form.title")}
             </h2>
 
@@ -185,7 +183,7 @@ export default function Startups() {
                 />
               </div>
 
-              {/* STAGE (Select + hidden) */}
+              {/* STAGE  */}
               <div className="space-y-2">
                 <Label>{t("startups.form.stage")}</Label>
 
@@ -237,4 +235,6 @@ export default function Startups() {
       </section>
     </div>
   );
+
 }
+

@@ -42,7 +42,7 @@ export default function OpenJobs() {
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-3xl">
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-inter font-bold leading-normal overflow-visible break-words whitespace-normal mb-6 text-gradient">
               Open Positions
             </h1>
             <p className="text-xl text-muted-foreground">

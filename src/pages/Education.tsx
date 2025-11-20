@@ -112,9 +112,9 @@ export default function Education() {
   return (
     <div className="min-h-screen bg-[hsl(var(--nebula-darker))] pt-20">
       {/* Hero */}
-      <section className="py-20 px-4">
+      <section className="py-20 mt-20 px-4">
         <div className="container mx-auto text-center">
-          <h1 className="gradient-title font-orbitron text-4xl md:text-6xl font-bold mb-6 animate-fade-in-up">
+          <h1 className="gradient-title font-inter text-6xl  font-bold leading-normal overflow-visible break-words whitespace-normal max-w-4xl mx-auto mb-6 animate-fade-in-up">
             {t('education.hero.title')}
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 animate-fade-in">
@@ -133,11 +133,11 @@ export default function Education() {
       </section>
 
       {/* Programs */}
-      <section className="py-24 px-4">
+      <section className="py-24 mt-16 px-4">
         <div className="container mx-auto">
-          <h2 className="gradient-title font-orbitron text-3xl md:text-4xl font-bold text-center mb-12">
+          {/* <h2 className="gradient-title font-orbitron text-3xl md:text-4xl font-bold text-center mb-12">
             {t('education.programs.title') || "Our Programs"}
-          </h2>
+          </h2> */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {programs.map((program, index) => {
               const ProgramIcon = program.icon;
@@ -172,12 +172,12 @@ export default function Education() {
       <section id="application-form" className="py-24 px-4">
         <div className="container mx-auto max-w-3xl">
           <div className="cosmic-card p-10 rounded-2xl border border-white/10 hover:scale-[1.01] transition-transform duration-300 animate-fade-in">
-            <h2 className="font-orbitron text-3xl font-bold text-center mb-4 text-foreground">
+            <h2 className="font-inter text-3xl font-bold leading-normal overflow-visible break-words whitespace-normal text-center mb-4 text-foreground">
               {t('education.form.title')}
             </h2>
 
             <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Name + Lastname */}
+              {/* Name/ Lastname */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <Label>{t('form.name')} *</Label>
@@ -201,7 +201,7 @@ export default function Education() {
                 </div>
               </div>
 
-              {/* Email + Phone */}
+              {/* Email / Phone */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <Label>{t('form.email')} *</Label>
@@ -253,7 +253,7 @@ export default function Education() {
                   </SelectContent>
                 </Select>
 
-                {/* Hidden input for select value */}
+          
                 <input type="hidden" name="program" value={formData.program} />
               </div>
 

@@ -191,7 +191,6 @@ import { BookOpen, Users, Globe, Shield } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useState, useEffect } from "react";
 
-// ---- STORY IMAGES ----
 import img1 from "@/assets/1.jpg";
 import img2 from "@/assets/2.jpg";
 import img3 from "@/assets/3.jpg";
@@ -254,14 +253,13 @@ export default function About() {
   return (
     <div className="min-h-screen mt-12 bg-[hsl(var(--nebula-darker))] pt-20">
 
-      {/* STORY SECTION 1 — TEXT LEFT / IMAGES RIGHT */}
-      <section className="py-20 px- mt-28 mb-28 bg-[hsl(var(--nebula-dark))]">
+      
+      <section className="py-20 px- mt-26 mb-28 bg-[hsl(var(--nebula-dark))]">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
 
-            {/* TEXT LEFT */}
             <div className="animate-fade-in flex flex-col justify-center">
-              <h2 className="gradient-title font-orbitron text-4xl font-bold mb-6">
+              <h2 className="gradient-title font-inter text-4xl font-bold leading-normal overflow-visible break-words whitespace-normal mb-6">
                 {t("about.story.title")}
               </h2>
               <p className="text-muted-foreground leading-relaxed text-xl max-w-xl">
@@ -269,7 +267,7 @@ export default function About() {
               </p>
             </div>
 
-            {/* IMAGES RIGHT */}
+           
             <div className="relative bg-[hsl(var(--nebula-darker))] rounded-2xl h-64 md:h-96 overflow-hidden border border-[hsl(var(--nebula-cyan)/0.2)] animate-scale-in">
               {storyImages.map((img, index) => (
                 <img
@@ -288,12 +286,12 @@ export default function About() {
         </div>
       </section>
 
-      {/* STORY SECTION 2 — IMAGES LEFT / TEXT RIGHT */}
+      {/* STORY SECTION 2  */}
       <section className="py-20 mt-8 px-4 bg-[hsl(var(--nebula-dark))] border-t border-white/10">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
 
-            {/* IMAGES LEFT */}
+            
             <div className="relative bg-[hsl(var(--nebula-darker))] rounded-2xl h-64 md:h-96 overflow-hidden border border-[hsl(var(--nebula-cyan)/0.2)] animate-scale-in">
               {storyImages.map((img, index) => (
                 <img
@@ -308,7 +306,7 @@ export default function About() {
               ))}
             </div>
 
-            {/* TEXT RIGHT */}
+           
             <div className="animate-fade-in flex flex-col justify-center">
               <p className="text-muted-foreground leading-relaxed text-xl max-w-xl">
                 {part2}
@@ -319,19 +317,19 @@ export default function About() {
         </div>
       </section>
 
-      {/* Mission Quote */}
+     
       <section className="py-20 px-4">
         <div className="container mx-auto">
-          <blockquote className="gradient-title font-orbitron text-2xl md:text-4xl font-bold text-center max-w-4xl mx-auto animate-fade-in-up">
+          <blockquote className="gradient-title font-inter text-2xl md:text-4xl font-bold leading-normal overflow-visible break-words whitespace-normal text-center max-w-4xl mx-auto animate-fade-in-up">
             "{t("about.mission.quote")}"
           </blockquote>
         </div>
       </section>
 
-      {/* Values */}
+    
       <section className="py-20 px-4 bg-[hsl(var(--nebula-dark))]">
         <div className="container mx-auto">
-          <h2 className="gradient-title font-orbitron text-3xl md:text-4xl font-bold text-center mb-12">
+          <h2 className="gradient-title font-inter text-3xl md:text-4xl font-bold leading-normal overflow-visible break-words whitespace-normal text-center mb-12">
             {t("about.values.title")}
           </h2>
 
@@ -357,7 +355,7 @@ export default function About() {
       {/* Partnerships */}
       <section className="py-20 px-4 bg-[hsl(var(--nebula-dark))]">
         <div className="container mx-auto">
-          <h2 className="gradient-title font-orbitron text-3xl md:text-4xl font-bold text-center mb-12">
+          <h2 className="gradient-title font-inter text-3xl md:text-4xl font-bold leading-normal overflow-visible break-words whitespace-normal text-center mb-12">
             {t("about.partnerships.title")}
           </h2>
 
